@@ -1,32 +1,33 @@
-name: Generate Stats Card
+name: Generate Metrics Card
 
 on:
   schedule:
-    - cron: "0 */12 * * *" # Runs every 12 hours
-  workflow_dispatch: # Allows you to run it manually
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Generate Stats Card
+      - name: Generate Metrics Card
         uses: readme-tools/github-readme-stats-action@v1
         with:
           card: stats
-          # Add your specific parameters here
           options: username=Asachdeva001&show_icons=true&hide_title=true&hide_rank=true
-          path: profile-stats.svg # This is where the file will be saved
-          token: ${{ secrets.GITHUB_TOKEN }}
+          path: github-metrics.svg
+          token: ${{ secrets.GH_TOKEN }} # Uses your custom secret name
 
       - name: Commit and Push
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add profile-stats.svg
-          git commit -m "Update stats card" || exit 0
+          git add github-metrics.svg
+          git commit -m "Update github-metrics.svg" || exit 0
           git push
         env:
-          # Use the PAT you created in Step 1 to allow pushing to the repo
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }} # Links your secret for the push command
