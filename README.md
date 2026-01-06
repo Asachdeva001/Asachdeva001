@@ -1,59 +1,55 @@
 <p align="center">
-  <img src="banner.svg" />
-</p>
-
-<h1 align="center">Aashish Sachdeva</h1>
-
-<p align="center">
-  Software Engineer · Systems Thinker · Builder of Scalable Products
+  <img src="https://raw.githubusercontent.com/aashishsachdeva/aashishsachdeva/main/banner.svg" />
 </p>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/aashish-sachdeva-6b1943281">LinkedIn</a> ·
-  <a href="https://github.com/Asachdeva001">GitHub</a> ·
-  <a href="https://aashish-sachdeva.vercel.app/">Portfolio</a> ·
+  <a href="https://www.linkedin.com/in/aashish-sachdeva" target="_blank">LinkedIn</a> ·
+  <a href="https://github.com/aashishsachdeva" target="_blank">GitHub</a> ·
+  <a href="https://aashishsachdeva.dev" target="_blank">Portfolio</a> ·
   <a href="mailto:ashisach001@gmail.com">Email</a>
 </p>
 
+---
+
 ## Overview
 
-I am a Computer Science undergraduate at **Punjab Engineering College, Chandigarh**, focused on building **reliable, scalable, and performance-driven software systems**.
+Computer Science undergraduate at **Punjab Engineering College, Chandigarh**, focused on building **scalable, reliable, and performance-driven software systems**.
 
-My work spans **full-stack engineering, cloud-native architectures, and data-informed product development**, with an emphasis on clean abstractions, measurable impact, and long-term maintainability.
+Experienced across **full-stack development, cloud-native infrastructure, and data-informed products**, with strong emphasis on engineering fundamentals, clean architecture, and measurable outcomes.
 
 <img src="assets/motion-divider.svg" />
 
-## Experience Highlights
+## Experience
 
 ### Full Stack Web Developer Intern — Growero.io
-- Improved system reliability by optimizing asynchronous API workflows
+- Optimized asynchronous API workflows to improve reliability and scalability
 - Reduced initial page load time by **40%** through frontend performance tuning
-- Designed and implemented **secure authentication flows (SSO + email/password)**
-- Led CI/CD adoption using **GitHub Actions**, reducing release cycles by **25%**
+- Implemented secure **SSO and email/password authentication flows**
+- Led CI/CD integration using **GitHub Actions**, reducing release cycles by **25%**
 
 ### Web Developer — E-Summit’25 (PEC)
-- Built and deployed a high-traffic platform supporting **800+ concurrent users**
-- Achieved **99.9% uptime** with sub-1.2s load times during peak usage
-- Improved user engagement by **25%** through navigation and UX redesign
+- Built and deployed a high-traffic platform supporting **800+ users**
+- Achieved **99.9% uptime** with sub-1.2s load time under peak traffic
+- Improved user engagement by **25%** via navigation and UX redesign
 
-### Frontend Developer Intern — WebInOrbit
-- Developed analytics dashboards using **React + TailwindCSS**
-- Reduced design iteration cycles by **18%** via improved UI precision
-- Actively contributed to code reviews and refactoring initiatives
+### Frontend Developer Intern — WebinOrbit
+- Developed analytics dashboards using **React and TailwindCSS**
+- Reduced design iteration cycles by **18%** through improved UI precision
+- Contributed to code reviews and systematic refactoring
 
 <img src="assets/motion-divider.svg" />
 
-## Flagship Projects
+## Selected Projects
 
 ### Mental Health AI Companion
-- Designed an AI-driven conversational system to infer emotional states and stress signals
-- Iteratively improved classification performance using feature refinement and evaluation metrics
-- Translated model insights into user-facing dashboards with a focus on explainability and trust
+- Built an AI-driven conversational system to infer emotional and stress signals
+- Improved classification performance via iterative feature refinement
+- Converted model insights into explainable, user-facing dashboards
 
 ### Noteflow — Productivity Platform
-- Built a real-time notes and task management system with Firebase synchronization
-- Achieved sub-800ms load times with persistent cross-session data integrity
-- Designed for responsive, cross-platform usage using Material-UI
+- Developed a real-time notes and task management application
+- Firebase-based syncing with sub-800ms load times
+- Designed responsive, cross-platform UX using Material-UI
 
 <img src="assets/motion-divider.svg" />
 
@@ -71,27 +67,34 @@ MongoDB · MySQL · Redis · REST APIs
 **Cloud & DevOps**  
 GCP · AWS (Cloud Practitioner) · Docker · GitHub Actions
 
-**CS Fundamentals**  
+**Core CS**  
 Data Structures · Algorithms · OOP · System Design
 
 <img src="assets/motion-divider.svg" />
 
 ## Engineering Philosophy
 
-I optimize for:
-- Clarity over cleverness
-- Systems that evolve without breaking
-- Metrics-driven decisions
-- Long-term product and engineering value
+- Optimize for clarity and maintainability
+- Design systems to evolve without friction
+- Measure outcomes, not activity
+- Prefer simplicity that scales
 
-More details → [philosophy.md](philosophy.md)
+More → [philosophy.md](philosophy.md)
+
+<img src="assets/motion-divider.svg" />
 
 ## Activity
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Asachdeva001&show_icons=true&hide_title=true&hide_rank=true" />
+  <img src="https://github-readme-stats.vercel.app/api?username=aashishsachdeva&show_icons=true&hide_title=true&hide_rank=true" />
 </p>
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Asachdeva001" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=aashishsachdeva" />
+</p>
+
+---
+
+<p align="center" style="color:#64748b">
+  <sub>Profile overview above · Engineering activity below</sub>
 </p>
