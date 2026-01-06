@@ -1,15 +1,13 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/aashishsachdeva/aashishsachdeva/main/banner.svg" />
+  <img src="https://raw.githubusercontent.com/Asachdeva001/Asachdeva001/main/banner.svg" />
 </p>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/aashish-sachdeva" target="_blank">LinkedIn</a> ·
-  <a href="https://github.com/aashishsachdeva" target="_blank">GitHub</a> ·
-  <a href="https://aashishsachdeva.dev" target="_blank">Portfolio</a> ·
+  <a href="https://www.linkedin.com/in/aashish-sachdeva-6b1943281" target="_blank">LinkedIn</a> ·
+  <a href="https://github.com/Asachdeva001" target="_blank">GitHub</a> ·
+  <a href="https://aashish-sachdeva.vercel.app/" target="_blank">Portfolio</a> ·
   <a href="mailto:ashisach001@gmail.com">Email</a>
 </p>
-
----
 
 ## Overview
 
@@ -86,11 +84,11 @@ More → [philosophy.md](philosophy.md)
 ## Activity
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=aashishsachdeva&show_icons=true&hide_title=true&hide_rank=true" />
+  <img src="https://github-readme-stats.vercel.app/api?username=Asachdeva001&show_icons=true&hide_title=true&hide_rank=true" />
 </p>
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=aashishsachdeva" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Asachdeva001" />
 </p>
 
 ---
