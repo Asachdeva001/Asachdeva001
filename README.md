@@ -75,7 +75,7 @@ Data Structures · Algorithms · OOP · System Design
 ## Activity
 
 <p align="center">
-  <img src="./profile-stats.svg" alt="My GitHub Stats" />
+  <img src="./profile-metrics.svg" alt="My GitHub Metric" />
 </p>
 
 <p align="center">
