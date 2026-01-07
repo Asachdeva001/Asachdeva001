@@ -53,22 +53,10 @@ Experienced across **full-stack development, cloud-native infrastructure, and da
 
 <img src="assets/motion-divider.svg" />
 
-## Technical Foundation
-
-**Languages**  
-JavaScript · Python · C++
-
-**Frameworks & Platforms**  
-React · Next.js · MERN · Flask · TailwindCSS
-
-**Databases & Systems**  
-MongoDB · MySQL · Redis · REST APIs
-
-**Cloud & DevOps**  
-GCP · AWS (Cloud Practitioner) · Docker · GitHub Actions
-
-**Core CS**  
-Data Structures · Algorithms · OOP · System Design
+<p align="center">
+  ## Tech Foundation
+  <img src="assets/tech-stack.svg" />
+</p>
 
 <img src="assets/motion-divider.svg" />
 
