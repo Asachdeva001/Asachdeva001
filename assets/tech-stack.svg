@@ -51,7 +51,7 @@
   <text x="470" y="325" text-anchor="middle" class="txt">AWS</text>
 
   <polygon class="hex" fill="#64748b" points="540,290 590,260 640,290 640,350 590,380 540,350"/>
-  <text x="590" y="325" text-anchor="middle" class="txt">MS Azur</text>
+  <text x="590" y="325" text-anchor="middle" class="txt">MS Azure</text>
 
   <polygon class="hex" fill="#a855f7" points="660,290 710,260 760,290 760,350 710,380 660,350"/>
   <text x="710" y="325" text-anchor="middle" class="txt">CI/CD</text>
