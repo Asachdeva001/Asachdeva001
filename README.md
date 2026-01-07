@@ -28,11 +28,15 @@
 ## Activity
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Asachdeva001" />
+  <img src="assets/activity/github-stats.svg" alt="GitHub Stats" />
 </p>
 
 <p align="center">
-  <img src="./github-metrics.svg" alt="My GitHub Metric" />
+  <img src="assets/activity/streak.svg" alt="GitHub Streak" />
+</p>
+
+<p align="center">
+  <img src="assets/activity/top-langs.svg" alt="Top Languages" />
 </p>
 
 ---
