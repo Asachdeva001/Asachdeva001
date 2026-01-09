@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: "0 */6 * * *"   # every 6 hours
   workflow_dispatch:
-  
+
 permissions:
   contents: write
 
@@ -19,23 +19,38 @@ jobs:
       - name: Create assets directory
         run: mkdir -p assets/activity
 
-      - name: Fetch GitHub Stats
+      - name: Fetch GitHub Stats (guarded)
         run: |
-          curl -L \
-          "https://github-readme-stats-sigma-five.vercel.app/api?username=Asachdeva001&show_icons=true&theme=blue-green&count_private=true" \
-          -o assets/activity/github-stats.svg
+          set -e
+          URL="https://github-readme-stats-sigma-five.vercel.app/api?username=Asachdeva001&show_icons=true&theme=blue-green&count_private=true"
+          TMP="assets/activity/github-stats.tmp.svg"
+          OUT="assets/activity/github-stats.svg"
 
-      - name: Fetch Top Languages
-        run: |
-          curl -L \
-          "https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=Asachdeva001&hide=TeX,OpenEdge%20ABL&layout=compact&show_icons=true&theme=blue-green&count_private=true" \
-          -o assets/activity/top-langs.svg
+          curl -fL "$URL" -o "$TMP" || exit 0
+          grep -q "<svg" "$TMP" || exit 0
+          mv "$TMP" "$OUT"
 
-      - name: Fetch GitHub Streak
+      - name: Fetch Top Languages (guarded)
         run: |
-          curl -L \
-          "https://github-readme-streak-stats.herokuapp.com?user=Asachdeva001&theme=blue-green" \
-          -o assets/activity/streak.svg
+          set -e
+          URL="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=Asachdeva001&hide=TeX,OpenEdge%20ABL&layout=compact&show_icons=true&theme=blue-green&count_private=true"
+          TMP="assets/activity/top-langs.tmp.svg"
+          OUT="assets/activity/top-langs.svg"
+
+          curl -fL "$URL" -o "$TMP" || exit 0
+          grep -q "<svg" "$TMP" || exit 0
+          mv "$TMP" "$OUT"
+
+      - name: Fetch GitHub Streak (guarded)
+        run: |
+          set -e
+          URL="https://github-readme-streak-stats.herokuapp.com?user=Asachdeva001&theme=blue-green"
+          TMP="assets/activity/streak.tmp.svg"
+          OUT="assets/activity/streak.svg"
+
+          curl -fL "$URL" -o "$TMP" || exit 0
+          grep -q "<svg" "$TMP" || exit 0
+          mv "$TMP" "$OUT"
 
       - name: Commit and push if changed
         run: |
