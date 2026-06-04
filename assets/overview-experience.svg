@@ -88,10 +88,7 @@
       animation: show-education 20s infinite;
     }
     .exp-scroll-group {
-      animation: scroll-experience 20s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-    }
-    .edu-scroll-group {
-      animation: scroll-education 20s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      animation: scroll-experience 20s ease-in-out infinite;
     }
 
     @keyframes show-experience {
@@ -107,17 +104,9 @@
     }
 
     @keyframes scroll-experience {
-      0%, 15% { transform: translateY(0); }
-      20%, 35% { transform: translateY(-240px); }
-      40%, 48% { transform: translateY(-480px); }
-      50%, 100% { transform: translateY(0); }
-    }
-
-    @keyframes scroll-education {
-      0%, 50% { transform: translateY(0); }
-      55%, 70% { transform: translateY(0); }
-      75%, 90% { transform: translateY(-100px); }
-      95%, 100% { transform: translateY(0); }
+      0%, 5% { transform: translateY(0); }
+      43%, 47% { transform: translateY(-780px); }
+      49%, 100% { transform: translateY(0); }
     }
   </style>
 
@@ -262,8 +251,8 @@
     <!-- Experience File View (experience.ts) -->
     <g class="exp-visibility-group">
       <g class="exp-scroll-group">
-        <!-- Active Line Highlight (Line 14) -->
-        <rect x="261" y="358" width="898" height="20" fill="#1e293b" fill-opacity="0.35"/>
+        <!-- Active Line Highlight (Line 12) -->
+        <rect x="261" y="318" width="898" height="20" fill="#1e293b" fill-opacity="0.35"/>
 
         <!-- Line Numbers -->
         <g fill="#334155" font-family="Consolas, Fira Code, Monaco, monospace" font-size="13" text-anchor="end">
@@ -310,6 +299,18 @@
           <text x="295" y="913">41</text>
           <text x="295" y="933">42</text>
           <text x="295" y="953">43</text>
+          <text x="295" y="973">44</text>
+          <text x="295" y="993">45</text>
+          <text x="295" y="1013">46</text>
+          <text x="295" y="1033">47</text>
+          <text x="295" y="1053">48</text>
+          <text x="295" y="1073">49</text>
+          <text x="295" y="1093">50</text>
+          <text x="295" y="1113">51</text>
+          <text x="295" y="1133">52</text>
+          <text x="295" y="1153">53</text>
+          <text x="295" y="1173">54</text>
+          <text x="295" y="1193">55</text>
         </g>
 
         <!-- Code Highlighted Text -->
@@ -345,7 +346,7 @@
             <tspan fill="#cbd5e1"> [</tspan>
             <tspan fill="#34d399">'systems'</tspan>
             <tspan fill="#cbd5e1">, </tspan>
-            <tspan fill="#34d399">'cloud'</tspan>
+            <tspan fill="#34d399">'AI/ML'</tspan>
             <tspan fill="#cbd5e1">, </tspan>
             <tspan fill="#34d399">'fullstack'</tspan>
             <tspan fill="#cbd5e1">]</tspan>
@@ -363,17 +364,17 @@
           </text>
           <text x="315" y="273">
             <tspan fill="#94a3b8">  company:</tspan>
-            <tspan fill="#34d399"> 'Growero.io'</tspan>
+            <tspan fill="#34d399"> 'NatWest Group'</tspan>
             <tspan fill="#94a3b8">,</tspan>
           </text>
           <text x="315" y="293">
             <tspan fill="#94a3b8">  role:</tspan>
-            <tspan fill="#34d399"> 'Full Stack Web Developer Intern'</tspan>
+            <tspan fill="#34d399"> 'Digi X Tech Intern'</tspan>
             <tspan fill="#94a3b8">,</tspan>
           </text>
           <text x="315" y="313">
             <tspan fill="#94a3b8">  duration:</tspan>
-            <tspan fill="#34d399"> 'May 2025 - Aug 2025'</tspan>
+            <tspan fill="#34d399"> 'May 2026 - Present'</tspan>
             <tspan fill="#94a3b8">,</tspan>
           </text>
           <text x="315" y="333">
@@ -381,11 +382,11 @@
             <tspan fill="#cbd5e1"> [</tspan>
           </text>
           <text x="315" y="353">
-            <tspan fill="#34d399">    'Optimized async APIs, reducing load times by 40%'</tspan>
+            <tspan fill="#34d399">    'Engineered GitLab CI/CD pipelines'</tspan>
             <tspan fill="#cbd5e1">,</tspan>
           </text>
           <text x="315" y="373">
-            <tspan fill="#34d399">    'Led CI/CD automation to achieve 25% faster releases'</tspan>
+            <tspan fill="#34d399">    'Developed automation testing workflows'</tspan>
           </text>
           <text x="315" y="393">
             <tspan fill="#cbd5e1">  ]</tspan>
@@ -395,17 +396,17 @@
           </text>
           <text x="315" y="433">
             <tspan fill="#94a3b8">  company:</tspan>
-            <tspan fill="#34d399"> 'WebinOrbit'</tspan>
+            <tspan fill="#34d399"> 'CSIR India'</tspan>
             <tspan fill="#94a3b8">,</tspan>
           </text>
           <text x="315" y="453">
             <tspan fill="#94a3b8">  role:</tspan>
-            <tspan fill="#34d399"> 'Frontend Web Developer Intern'</tspan>
+            <tspan fill="#34d399"> 'AI/ML Engineer Intern'</tspan>
             <tspan fill="#94a3b8">,</tspan>
           </text>
           <text x="315" y="473">
             <tspan fill="#94a3b8">  duration:</tspan>
-            <tspan fill="#34d399"> 'Sep 2024 - Nov 2024'</tspan>
+            <tspan fill="#34d399"> 'Jan 2026 - May 2026'</tspan>
             <tspan fill="#94a3b8">,</tspan>
           </text>
           <text x="315" y="493">
@@ -413,221 +414,226 @@
             <tspan fill="#cbd5e1"> [</tspan>
           </text>
           <text x="315" y="513">
-            <tspan fill="#34d399">    'Developed responsive analytics dashboards in React'</tspan>
+            <tspan fill="#34d399">    'Automated geology task of finding paleo segments'</tspan>
             <tspan fill="#cbd5e1">,</tspan>
           </text>
           <text x="315" y="533">
-            <tspan fill="#34d399">    'Improved UI precision, reducing design iterations by 18%'</tspan>
+            <tspan fill="#34d399">    'Implemented Random Forest &amp; U-Net CNN models'</tspan>
           </text>
           <text x="315" y="553">
             <tspan fill="#cbd5e1">  ]</tspan>
           </text>
           <text x="315" y="573">
-            <tspan fill="#cbd5e1">}];</tspan>
+            <tspan fill="#cbd5e1">}, {</tspan>
           </text>
-          <text x="315" y="593"></text>
+          <text x="315" y="593">
+            <tspan fill="#94a3b8">  company:</tspan>
+            <tspan fill="#34d399"> 'Growero.io'</tspan>
+            <tspan fill="#94a3b8">,</tspan>
+          </text>
           <text x="315" y="613">
-            <tspan fill="#f472b6">export</tspan>
-            <tspan fill="#f43f5e"> const</tspan>
-            <tspan fill="#e2e8f0"> freelance: </tspan>
-            <tspan fill="#60a5fa">Freelancer</tspan>
-            <tspan fill="#f43f5e"> =</tspan>
-            <tspan fill="#cbd5e1"> {</tspan>
+            <tspan fill="#94a3b8">  role:</tspan>
+            <tspan fill="#34d399"> 'Full Stack Web Developer Intern'</tspan>
+            <tspan fill="#94a3b8">,</tspan>
           </text>
           <text x="315" y="633">
+            <tspan fill="#94a3b8">  duration:</tspan>
+            <tspan fill="#34d399"> 'May 2025 - Aug 2025'</tspan>
+            <tspan fill="#94a3b8">,</tspan>
+          </text>
+          <text x="315" y="653">
+            <tspan fill="#94a3b8">  highlights:</tspan>
+            <tspan fill="#cbd5e1"> [</tspan>
+          </text>
+          <text x="315" y="673">
+            <tspan fill="#34d399">    'Optimized async APIs, reducing load times by 40%'</tspan>
+            <tspan fill="#cbd5e1">,</tspan>
+          </text>
+          <text x="315" y="693">
+            <tspan fill="#34d399">    'Led CI/CD automation to achieve 25% faster releases'</tspan>
+          </text>
+          <text x="315" y="713">
+            <tspan fill="#cbd5e1">  ]</tspan>
+          </text>
+          <text x="315" y="733">
+            <tspan fill="#cbd5e1">}, {</tspan>
+          </text>
+          <text x="315" y="753">
             <tspan fill="#94a3b8">  role:</tspan>
             <tspan fill="#34d399"> 'Full Stack Web Developer'</tspan>
             <tspan fill="#94a3b8">,</tspan>
           </text>
-          <text x="315" y="653">
+          <text x="315" y="773">
             <tspan fill="#94a3b8">  duration:</tspan>
             <tspan fill="#34d399"> 'Nov 2024 - May 2025'</tspan>
             <tspan fill="#94a3b8">,</tspan>
           </text>
-          <text x="315" y="673">
+          <text x="315" y="793">
             <tspan fill="#94a3b8">  highlights:</tspan>
             <tspan fill="#cbd5e1"> [</tspan>
-          </text>
-          <text x="315" y="693">
-            <tspan fill="#34d399">    'Delivered 6+ production web applications'</tspan>
-            <tspan fill="#cbd5e1">,</tspan>
-          </text>
-          <text x="315" y="713">
-            <tspan fill="#34d399">    'Built accessible and performant interfaces'</tspan>
-          </text>
-          <text x="315" y="733">
-            <tspan fill="#cbd5e1">  ]</tspan>
-          </text>
-          <text x="315" y="753">
-            <tspan fill="#cbd5e1">};</tspan>
-          </text>
-          <text x="315" y="773"></text>
-          <text x="315" y="793">
-            <tspan fill="#f472b6">export</tspan>
-            <tspan fill="#f43f5e"> const</tspan>
-            <tspan fill="#e2e8f0"> company: </tspan>
-            <tspan fill="#60a5fa">Founder</tspan>
-            <tspan fill="#f43f5e"> =</tspan>
-            <tspan fill="#cbd5e1"> {</tspan>
           </text>
           <text x="315" y="813">
-            <tspan fill="#94a3b8">  company:</tspan>
-            <tspan fill="#34d399"> 'Swift Expand'</tspan>
-            <tspan fill="#94a3b8">,</tspan>
+            <tspan fill="#34d399">    'Delivered 6+ production-ready web applications'</tspan>
+            <tspan fill="#cbd5e1">,</tspan>
           </text>
           <text x="315" y="833">
-            <tspan fill="#94a3b8">  role:</tspan>
-            <tspan fill="#34d399"> 'CEO &amp; Lead Developer'</tspan>
-            <tspan fill="#94a3b8">,</tspan>
+            <tspan fill="#34d399">    'Built accessible and performant interfaces'</tspan>
           </text>
           <text x="315" y="853">
-            <tspan fill="#94a3b8">  duration:</tspan>
-            <tspan fill="#34d399"> 'Aug 2025 - Present'</tspan>
-            <tspan fill="#94a3b8">,</tspan>
+            <tspan fill="#cbd5e1">  ]</tspan>
           </text>
           <text x="315" y="873">
+            <tspan fill="#cbd5e1">}, {</tspan>
+          </text>
+          <text x="315" y="893">
+            <tspan fill="#94a3b8">  company:</tspan>
+            <tspan fill="#34d399"> 'WebinOrbit'</tspan>
+            <tspan fill="#94a3b8">,</tspan>
+          </text>
+          <text x="315" y="913">
+            <tspan fill="#94a3b8">  role:</tspan>
+            <tspan fill="#34d399"> 'Frontend Web Developer Intern'</tspan>
+            <tspan fill="#94a3b8">,</tspan>
+          </text>
+          <text x="315" y="933">
+            <tspan fill="#94a3b8">  duration:</tspan>
+            <tspan fill="#34d399"> 'Sep 2024 - Nov 2024'</tspan>
+            <tspan fill="#94a3b8">,</tspan>
+          </text>
+          <text x="315" y="953">
             <tspan fill="#94a3b8">  highlights:</tspan>
             <tspan fill="#cbd5e1"> [</tspan>
           </text>
-          <text x="315" y="893">
-            <tspan fill="#34d399">    'Led platform migrations and database scaling'</tspan>
+          <text x="315" y="973">
+            <tspan fill="#34d399">    'Developed responsive analytics dashboards in React'</tspan>
             <tspan fill="#cbd5e1">,</tspan>
           </text>
-          <text x="315" y="913">
-            <tspan fill="#34d399">    'Engineered serverless AWS integrations'</tspan>
+          <text x="315" y="993">
+            <tspan fill="#34d399">    'Improved UI precision, reducing iteration cycles'</tspan>
           </text>
-          <text x="315" y="933">
+          <text x="315" y="1013">
             <tspan fill="#cbd5e1">  ]</tspan>
           </text>
-          <text x="315" y="953">
-            <tspan fill="#cbd5e1">};</tspan>
+          <text x="315" y="1033">
+            <tspan fill="#cbd5e1">  }</tspan>
+          </text>
+          <text x="315" y="1053">
+            <tspan fill="#cbd5e1">];</tspan>
           </text>
         </g>
 
         <!-- Blinking Cursor -->
-        <rect x="765" y="360" width="1.5" height="15" fill="#38bdf8">
-          <animate attributeName="opacity" values="1;0;1" dur="0.9s" repeatCount="indefinite" />
-        </rect>
+        <g>
+          <rect x="584" y="320" width="1.5" height="15" fill="#38bdf8">
+            <animate attributeName="opacity" values="1;0;1" dur="0.9s" repeatCount="indefinite" />
+          </rect>
+        </g>
       </g>
     </g>
 
-    <!-- Education File View (education.json) -->
+    <!-- Education File View (education.json) - STATIC AND PROPERLY FORMATTED -->
     <g class="edu-visibility-group">
-      <g class="edu-scroll-group">
-        <!-- Active Line Highlight (Line 9) -->
-        <rect x="261" y="258" width="898" height="20" fill="#1e293b" fill-opacity="0.35"/>
+      <!-- Active Line Highlight (Line 5) -->
+      <rect x="261" y="170" width="898" height="20" fill="#1e293b" fill-opacity="0.35"/>
 
-        <!-- Line Numbers -->
-        <g fill="#334155" font-family="Consolas, Fira Code, Monaco, monospace" font-size="13" text-anchor="end">
-          <text x="295" y="113">1</text>
-          <text x="295" y="133">2</text>
-          <text x="295" y="153">3</text>
-          <text x="295" y="173">4</text>
-          <text x="295" y="193">5</text>
-          <text x="295" y="213">6</text>
-          <text x="295" y="233">7</text>
-          <text x="295" y="253">8</text>
-          <text x="295" y="273">9</text>
-          <text x="295" y="293">10</text>
-          <text x="295" y="313">11</text>
-          <text x="295" y="333">12</text>
-          <text x="295" y="353">13</text>
-          <text x="295" y="373">14</text>
-          <text x="295" y="393">15</text>
-          <text x="295" y="413">16</text>
-          <text x="295" y="433">17</text>
-          <text x="295" y="453">18</text>
-          <text x="295" y="473">19</text>
-        </g>
-
-        <!-- Code Highlighted Text -->
-        <g class="code-text" font-family="Consolas, Fira Code, Monaco, monospace" font-size="13.5">
-          <text x="315" y="113">
-            <tspan fill="#cbd5e1">{</tspan>
-          </text>
-          <text x="315" y="133">
-            <tspan fill="#60a5fa">  "education"</tspan>
-            <tspan fill="#cbd5e1">: {</tspan>
-          </text>
-          <text x="315" y="153">
-            <tspan fill="#60a5fa">    "institution"</tspan>
-            <tspan fill="#cbd5e1">: </tspan>
-            <tspan fill="#34d399">"Punjab Engineering College"</tspan>
-            <tspan fill="#cbd5e1">,</tspan>
-          </text>
-          <text x="315" y="173">
-            <tspan fill="#60a5fa">    "location"</tspan>
-            <tspan fill="#cbd5e1">: </tspan>
-            <tspan fill="#34d399">"Chandigarh, India"</tspan>
-            <tspan fill="#cbd5e1">,</tspan>
-          </text>
-          <text x="315" y="193">
-            <tspan fill="#60a5fa">    "degree"</tspan>
-            <tspan fill="#cbd5e1">: </tspan>
-            <tspan fill="#34d399">"Bachelor of Technology (B.Tech)"</tspan>
-            <tspan fill="#cbd5e1">,</tspan>
-          </text>
-          <text x="315" y="213">
-            <tspan fill="#60a5fa">    "major"</tspan>
-            <tspan fill="#cbd5e1">: </tspan>
-            <tspan fill="#34d399">"Computer Science &amp; Engineering"</tspan>
-            <tspan fill="#cbd5e1">,</tspan>
-          </text>
-          <text x="315" y="233">
-            <tspan fill="#60a5fa">    "duration"</tspan>
-            <tspan fill="#cbd5e1">: </tspan>
-            <tspan fill="#34d399">"2023 - Present"</tspan>
-            <tspan fill="#cbd5e1">,</tspan>
-          </text>
-          <text x="315" y="253">
-            <tspan fill="#60a5fa">    "coursework"</tspan>
-            <tspan fill="#cbd5e1">: [</tspan>
-          </text>
-          <text x="315" y="273">
-            <tspan fill="#34d399">      "Data Structures &amp; Algorithms"</tspan>
-            <tspan fill="#cbd5e1">,</tspan>
-          </text>
-          <text x="315" y="293">
-            <tspan fill="#34d399">      "Database Management Systems"</tspan>
-            <tspan fill="#cbd5e1">,</tspan>
-          </text>
-          <text x="315" y="313">
-            <tspan fill="#34d399">      "Web Development"</tspan>
-            <tspan fill="#cbd5e1">,</tspan>
-          </text>
-          <text x="315" y="333">
-            <tspan fill="#34d399">      "Operating Systems"</tspan>
-          </text>
-          <text x="315" y="353">
-            <tspan fill="#cbd5e1">    ],</tspan>
-          </text>
-          <text x="315" y="373">
-            <tspan fill="#60a5fa">    "activities"</tspan>
-            <tspan fill="#cbd5e1">: [</tspan>
-          </text>
-          <text x="315" y="393">
-            <tspan fill="#34d399">      "Active Coding Club Member"</tspan>
-            <tspan fill="#cbd5e1">,</tspan>
-          </text>
-          <text x="315" y="413">
-            <tspan fill="#34d399">      "Smart India Hackathon Participant"</tspan>
-          </text>
-          <text x="315" y="433">
-            <tspan fill="#cbd5e1">    ]</tspan>
-          </text>
-          <text x="315" y="453">
-            <tspan fill="#cbd5e1">  }</tspan>
-          </text>
-          <text x="315" y="473">
-            <tspan fill="#cbd5e1">}</tspan>
-          </text>
-        </g>
-
-        <!-- Blinking Cursor -->
-        <rect x="595" y="260" width="1.5" height="15" fill="#38bdf8">
-          <animate attributeName="opacity" values="1;0;1" dur="0.9s" repeatCount="indefinite" />
-        </rect>
+      <!-- Line Numbers -->
+      <g fill="#334155" font-family="Consolas, Fira Code, Monaco, monospace" font-size="13" text-anchor="end">
+        <text x="295" y="113">1</text>
+        <text x="295" y="131">2</text>
+        <text x="295" y="149">3</text>
+        <text x="295" y="167">4</text>
+        <text x="295" y="185">5</text>
+        <text x="295" y="203">6</text>
+        <text x="295" y="221">7</text>
+        <text x="295" y="239">8</text>
+        <text x="295" y="257">9</text>
+        <text x="295" y="275">10</text>
+        <text x="295" y="293">11</text>
+        <text x="295" y="311">12</text>
+        <text x="295" y="329">13</text>
+        <text x="295" y="347">14</text>
+        <text x="295" y="365">15</text>
+        <text x="295" y="383">16</text>
+        <text x="295" y="401">17</text>
       </g>
+
+      <!-- Code Highlighted Text -->
+      <g class="code-text" font-family="Consolas, Fira Code, Monaco, monospace" font-size="13.5">
+        <text x="315" y="113">
+          <tspan fill="#cbd5e1">{</tspan>
+        </text>
+        <text x="315" y="131">
+          <tspan fill="#60a5fa">  "education"</tspan>
+          <tspan fill="#cbd5e1">: {</tspan>
+        </text>
+        <text x="315" y="149">
+          <tspan fill="#60a5fa">    "institution"</tspan>
+          <tspan fill="#cbd5e1">: </tspan>
+          <tspan fill="#34d399">"Punjab Engineering College"</tspan>
+          <tspan fill="#cbd5e1">,</tspan>
+        </text>
+        <text x="315" y="167">
+          <tspan fill="#60a5fa">    "location"</tspan>
+          <tspan fill="#cbd5e1">: </tspan>
+          <tspan fill="#34d399">"Chandigarh, India"</tspan>
+          <tspan fill="#cbd5e1">,</tspan>
+        </text>
+        <text x="315" y="185">
+          <tspan fill="#60a5fa">    "degree"</tspan>
+          <tspan fill="#cbd5e1">: </tspan>
+          <tspan fill="#34d399">"B.Tech, Computer Science"</tspan>
+          <tspan fill="#cbd5e1">,</tspan>
+        </text>
+        <text x="315" y="203">
+          <tspan fill="#60a5fa">    "duration"</tspan>
+          <tspan fill="#cbd5e1">: </tspan>
+          <tspan fill="#34d399">"2023 - Present"</tspan>
+          <tspan fill="#cbd5e1">,</tspan>
+        </text>
+        <text x="315" y="221">
+          <tspan fill="#60a5fa">    "coursework"</tspan>
+          <tspan fill="#cbd5e1">: [</tspan>
+        </text>
+        <text x="315" y="239">
+          <tspan fill="#34d399">      "Data Structures &amp; Algorithms"</tspan>
+          <tspan fill="#cbd5e1">,</tspan>
+        </text>
+        <text x="315" y="257">
+          <tspan fill="#34d399">      "Database Management Systems"</tspan>
+          <tspan fill="#cbd5e1">,</tspan>
+        </text>
+        <text x="315" y="275">
+          <tspan fill="#34d399">      "Web Development"</tspan>
+        </text>
+        <text x="315" y="293">
+          <tspan fill="#cbd5e1">    ],</tspan>
+        </text>
+        <text x="315" y="311">
+          <tspan fill="#60a5fa">    "activities"</tspan>
+          <tspan fill="#cbd5e1">: [</tspan>
+        </text>
+        <text x="315" y="329">
+          <tspan fill="#34d399">      "Active Coding Club Member"</tspan>
+          <tspan fill="#cbd5e1">,</tspan>
+        </text>
+        <text x="315" y="347">
+          <tspan fill="#34d399">      "Smart India Hackathon Participant"</tspan>
+        </text>
+        <text x="315" y="365">
+          <tspan fill="#cbd5e1">    ]</tspan>
+        </text>
+        <text x="315" y="383">
+          <tspan fill="#cbd5e1">  }</tspan>
+        </text>
+        <text x="315" y="401">
+          <tspan fill="#cbd5e1">}</tspan>
+        </text>
+      </g>
+
+      <!-- Blinking Cursor -->
+      <rect x="646" y="172" width="1.5" height="15" fill="#38bdf8">
+        <animate attributeName="opacity" values="1;0;1" dur="0.9s" repeatCount="indefinite" />
+      </rect>
     </g>
 
   </g>
@@ -649,14 +655,14 @@
   <g class="exp-visibility-group" text-anchor="end">
     <text x="1145" y="443" class="status-text-white">TypeScript</text>
     <text x="1060" y="443" class="status-text">UTF-8</text>
-    <text x="980" y="443" class="status-text">Ln 43, Col 2</text>
+    <text x="980" y="443" class="status-text">Ln 12, Col 35</text>
   </g>
 
   <!-- Status Bar Right Side: Education Active -->
   <g class="edu-visibility-group" text-anchor="end">
     <text x="1145" y="443" class="status-text-white">JSON</text>
     <text x="1060" y="443" class="status-text">UTF-8</text>
-    <text x="980" y="443" class="status-text">Ln 19, Col 2</text>
+    <text x="980" y="443" class="status-text">Ln 5, Col 43</text>
   </g>
 
 </svg>
