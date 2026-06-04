@@ -1,27 +1,184 @@
 <svg viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#020617"/>
-      <stop offset="50%" stop-color="#1e293b"/>
-      <stop offset="100%" stop-color="#020617"/>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#030712"/>
+      <stop offset="50%" stop-color="#090d1a"/>
+      <stop offset="100%" stop-color="#02040a"/>
     </linearGradient>
+
+    <!-- Glowing Filters -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#38bdf8" flood-opacity="0.5"/>
+    </filter>
+
+    <!-- Typing Clips -->
+    <!-- Line 1: "> npx whoami" -->
+    <clipPath id="clip-line1">
+      <rect x="180" y="85" width="0" height="28">
+        <animate attributeName="width" values="0;130;130" keyTimes="0;0.15;1" dur="8s" repeatCount="indefinite"/>
+      </rect>
+    </clipPath>
+
+    <!-- Line 2: "> npx get-specialties" -->
+    <clipPath id="clip-line2">
+      <rect x="180" y="155" width="0" height="28">
+        <animate attributeName="width" values="0;0;210;210" keyTimes="0;0.275;0.475;1" dur="8s" repeatCount="indefinite"/>
+      </rect>
+    </clipPath>
+
+    <!-- Line 3: "> status" -->
+    <clipPath id="clip-line3">
+      <rect x="180" y="225" width="0" height="28">
+        <animate attributeName="width" values="0;0;80;80" keyTimes="0;0.5625;0.725;1" dur="8s" repeatCount="indefinite"/>
+      </rect>
+    </clipPath>
   </defs>
 
-  <rect width="1200" height="320" fill="url(#bg)" />
+  <style>
+    .terminal-title {
+      font-family: 'Consolas', 'Fira Code', 'Courier New', monospace;
+      font-size: 13px;
+      fill: #64748b;
+      font-weight: 500;
+    }
+    .prompt-text {
+      font-family: 'Consolas', 'Fira Code', 'Courier New', monospace;
+      font-size: 16px;
+      fill: #94a3b8;
+    }
+    .output-text-bold {
+      font-family: 'Consolas', 'Fira Code', 'Courier New', monospace;
+      font-size: 24px;
+      font-weight: bold;
+      fill: #38bdf8;
+      letter-spacing: 0.5px;
+    }
+    .output-text-code {
+      font-family: 'Consolas', 'Fira Code', 'Courier New', monospace;
+      font-size: 18px;
+    }
+    .output-text-status {
+      font-family: 'Consolas', 'Fira Code', 'Courier New', monospace;
+      font-size: 16px;
+      fill: #34d399;
+    }
+    .grid-lines {
+      fill: none;
+      stroke: #1e293b;
+      stroke-width: 0.8;
+      stroke-dasharray: 4 4;
+      opacity: 0.4;
+    }
+  </style>
 
-  <text x="50%" y="44%" text-anchor="middle"
-        font-size="65"
-        fill="#f8fafc"
-        font-family="Segoe UI, Helvetica, Arial, sans-serif">
-    Aashish Sachdeva
-  </text>
+  <!-- Background Rect -->
+  <rect width="1200" height="320" fill="url(#bg-grad)" />
 
+  <!-- Ambient Grid Lines (Decorative) -->
+  <g class="grid-lines">
+    <path d="M 0,40 L 1200,40 M 0,80 L 1200,80 M 0,120 L 1200,120 M 0,160 L 1200,160 M 0,200 L 1200,200 M 0,240 L 1200,240 M 0,280 L 1200,280" />
+    <path d="M 100,0 L 100,320 M 200,0 L 200,320 M 300,0 L 300,320 M 400,0 L 400,320 M 500,0 L 500,320 M 600,0 L 600,320 M 700,0 L 700,320 M 800,0 L 800,320 M 900,0 L 900,320 M 1000,0 L 1000,320 M 1100,0 L 1100,320" />
+  </g>
 
+  <!-- Glowing Particles in Background -->
+  <circle cx="120" cy="80" r="60" fill="#06b6d4" fill-opacity="0.08" filter="url(#glow)">
+    <animate attributeName="cx" values="120;220;120" dur="15s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="80;160;80" dur="15s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1080" cy="240" r="70" fill="#a855f7" fill-opacity="0.07" filter="url(#glow)">
+    <animate attributeName="cx" values="1080;980;1080" dur="18s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="240;150;240" dur="18s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Floating Tech Symbols in Background -->
+  <!-- Floating tag: </ > -->
+  <g transform="translate(100, 220)" opacity="0.15">
+    <text font-family="sans-serif" font-size="28" fill="#cbd5e1" font-weight="bold">&lt;/&gt;</text>
+    <animateTransform attributeName="transform" type="translate" values="100,220; 100,205; 100,220" dur="6s" repeatCount="indefinite"/>
+  </g>
+  <!-- Floating brace: { } -->
+  <g transform="translate(1050, 70)" opacity="0.15">
+    <text font-family="sans-serif" font-size="32" fill="#cbd5e1" font-weight="bold">{ }</text>
+    <animateTransform attributeName="transform" type="translate" values="1050,70; 1050,85; 1050,70" dur="7s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- ================= TERMINAL WINDOW ================= -->
+  <!-- Outer Glow Border -->
+  <rect x="150" y="30" width="900" height="260" rx="12" fill="none" stroke="#0ea5e9" stroke-width="1" filter="url(#neon-glow)" opacity="0.4"/>
+  <!-- Main Window Body -->
+  <rect x="150" y="30" width="900" height="260" rx="12" fill="#050814" fill-opacity="0.92" stroke="#1e293b" stroke-width="1.5"/>
+
+  <!-- Terminal Header -->
+  <path d="M 150 42 A 12 12 0 0 1 162 30 L 1038 30 A 12 12 0 0 1 1050 42 L 1050 62 L 150 62 Z" fill="#0b0f19" stroke="#1e293b" stroke-width="0.5"/>
   
-  <text x="50%" y="58%" text-anchor="middle"
-        font-size="28"
-        fill="#cbd5f5"
-        font-family="Segoe UI, Helvetica, Arial, sans-serif">
-    Software Engineering · AI/ML · Cloud &amp; Systems
-  </text>
+  <!-- Window Controls -->
+  <circle cx="175" cy="46" r="6" fill="#ef4444" />
+  <circle cx="195" cy="46" r="6" fill="#eab308" />
+  <circle cx="215" cy="46" r="6" fill="#22c55e" />
+
+  <!-- Terminal Title -->
+  <text x="600" y="50" text-anchor="middle" class="terminal-title">aashish@sachdeva:~</text>
+
+  <!-- ================= TEXT CONTENT ================= -->
+
+  <!-- LINE 1 -->
+  <!-- Prompt -->
+  <g clip-path="url(#clip-line1)">
+    <text x="180" y="102" class="prompt-text">> npx whoami</text>
+  </g>
+  <!-- Output (Appears at 1.5s / keyTime 0.1875) -->
+  <g>
+    <text x="200" y="132" class="output-text-bold" filter="url(#glow)">Aashish Sachdeva</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.1874;0.1875;1" dur="8s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- LINE 2 -->
+  <!-- Prompt (Appears at 2.2s / keyTime 0.275) -->
+  <g clip-path="url(#clip-line2)">
+    <text x="180" y="172" class="prompt-text">> npx get-specialties</text>
+  </g>
+  <!-- Output (Appears at 4.2s / keyTime 0.525) -->
+  <g>
+    <text x="200" y="202" class="output-text-code">
+      <tspan fill="#64748b">[</tspan>
+      <tspan fill="#34d399">'Systems'</tspan>
+      <tspan fill="#64748b">, </tspan>
+      <tspan fill="#a855f7">'Cloud'</tspan>
+      <tspan fill="#64748b">, </tspan>
+      <tspan fill="#06b6d4">'Full-Stack'</tspan>
+      <tspan fill="#64748b">]</tspan>
+    </text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.524;0.525;1" dur="8s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- LINE 3 -->
+  <!-- Prompt (Appears at 4.8s / keyTime 0.6) -->
+  <g clip-path="url(#clip-line3)">
+    <text x="180" y="242" class="prompt-text">> status</text>
+  </g>
+  <!-- Output (Appears at 6.0s / keyTime 0.75) -->
+  <g>
+    <text x="200" y="272" class="output-text-status">Ready to build something amazing.</text>
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.749;0.75;1" dur="8s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- ================= MOVING CURSOR ================= -->
+  <rect width="9" height="18" fill="#38bdf8" opacity="0.8">
+    <!-- Blinking animation -->
+    <animate attributeName="opacity" values="0.8;0;0.8" dur="0.8s" repeatCount="indefinite"/>
+    <!-- Position X animation -->
+    <animate attributeName="x" values="180;310;310;180;180;385;385;180;180;260;260" keyTimes="0;0.15;0.1875;0.225;0.275;0.475;0.525;0.5625;0.6;0.725;1" dur="8s" repeatCount="indefinite"/>
+    <!-- Position Y animation -->
+    <animate attributeName="y" values="87;87;87;157;157;157;157;227;227;227;227" keyTimes="0;0.15;0.1875;0.225;0.275;0.475;0.525;0.5625;0.6;0.725;1" dur="8s" repeatCount="indefinite"/>
+  </rect>
+
 </svg>

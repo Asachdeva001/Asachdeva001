@@ -1,33 +1,62 @@
-<svg viewBox="0 0 1200 32" xmlns="http://www.w3.org/2000/svg">
-  <line
-    x1="600"
-    y1="16"
-    x2="600"
-    y2="16"
-    stroke="#334155"
-    stroke-width="4.5"
-    stroke-linecap="round">
+<svg viewBox="0 0 1200 20" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Laser Pulse Gradient -->
+    <linearGradient id="laser-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0"/>
+      <stop offset="15%" stop-color="#0ea5e9" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="1"/>
+      <stop offset="85%" stop-color="#6366f1" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>
+    </linearGradient>
 
-    <!-- Left expansion -->
+    <!-- Glow Filter -->
+    <filter id="glow" x="-20%" y="-100%" width="140%" height="300%">
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Track Line (Background) -->
+  <line
+    x1="50"
+    y1="10"
+    x2="1150"
+    y2="10"
+    stroke="#1e293b"
+    stroke-width="1.5"
+    stroke-linecap="round"
+    opacity="0.4" />
+
+  <!-- Animated Laser Segment -->
+  <line
+    x1="-150"
+    y1="10"
+    x2="50"
+    y2="10"
+    stroke="url(#laser-grad)"
+    stroke-width="3"
+    stroke-linecap="round"
+    filter="url(#glow)">
     <animate
       attributeName="x1"
-      from="600"
-      to="50"
-      dur="3.6s"
+      from="-250"
+      to="1150"
+      dur="3.2s"
       repeatCount="indefinite"
       keyTimes="0;1"
       calcMode="spline"
-      keySplines="0.42 0 0.58 1" />
-
-    <!-- Right expansion -->
+      keySplines="0.4 0 0.2 1" />
     <animate
       attributeName="x2"
-      from="600"
-      to="1150"
-      dur="3.6s"
+      from="-50"
+      to="1350"
+      dur="3.2s"
       repeatCount="indefinite"
       keyTimes="0;1"
       calcMode="spline"
-      keySplines="0.42 0 0.58 1" />
+      keySplines="0.4 0 0.2 1" />
   </line>
 </svg>

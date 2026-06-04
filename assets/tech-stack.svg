@@ -1,62 +1,215 @@
-<svg viewBox="0 0 1200 420" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 1200 450" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <style>
-      .hex { stroke: #0f172a; stroke-width: 2; }
-      .txt {
-        fill: #f8fafc;
-        font-family: Segoe UI, Helvetica, Arial, sans-serif;
-        font-size: 16;
-        font-weight: 600;
-      }
-    </style>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="50%" stop-color="#080c18"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+
+    <!-- Glassmorphism Card Gradient -->
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.3"/>
+    </linearGradient>
+
+    <!-- Glowing Filters -->
+    <filter id="yellow-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#facc15" flood-opacity="0.35"/>
+    </filter>
+    <filter id="cyan-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#22d3ee" flood-opacity="0.35"/>
+    </filter>
+    <filter id="blue-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#3b82f6" flood-opacity="0.35"/>
+    </filter>
+    <filter id="green-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#4ade80" flood-opacity="0.35"/>
+    </filter>
+    <filter id="orange-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#f97316" flood-opacity="0.35"/>
+    </filter>
+    <filter id="purple-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#a855f7" flood-opacity="0.35"/>
+    </filter>
+    <filter id="card-glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
   </defs>
 
+  <style>
+    .card-bg {
+      fill: url(#card-grad);
+      stroke: #1e293b;
+      stroke-width: 1.5;
+    }
+    .card-title {
+      font-family: 'Segoe UI', -apple-system, sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      fill: #cbd5e1;
+      letter-spacing: 0.8px;
+    }
+    .badge-bg {
+      fill: #090d16;
+      stroke-width: 1.2;
+    }
+    .badge-text {
+      font-family: 'Segoe UI', -apple-system, sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      fill: #94a3b8;
+    }
+
+    /* Floating Animations */
+    @keyframes floatOdd {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-5px); }
+    }
+    @keyframes floatEven {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-3px); }
+    }
+
+    .float-odd {
+      animation: floatOdd 4.2s ease-in-out infinite;
+    }
+    .float-even {
+      animation: floatEven 5.0s ease-in-out infinite;
+    }
+  </style>
+
   <!-- Background -->
-  <rect width="1200" height="420" fill="#020617"/>
+  <rect width="1200" height="450" fill="url(#bg-grad)" />
 
-  <!-- ================= ROW 1 ================= -->
-  <polygon class="hex" fill="#facc15" points="300,90 350,60 400,90 400,150 350,180 300,150"/>
-  <text x="350" y="125" text-anchor="middle" class="txt">JavaScript</text>
+  <!-- ================= CATEGORY 1: FRONTEND & LANGUAGES ================= -->
+  <!-- Card Base -->
+  <rect x="40" y="40" width="350" height="370" rx="16" class="card-bg" filter="url(#card-glow)"/>
+  <text x="215" y="75" text-anchor="middle" class="card-title">LANGUAGES &amp; FRONTEND</text>
 
-  <polygon class="hex" fill="#60a5fa" points="420,90 470,60 520,90 520,150 470,180 420,150"/>
-  <text x="470" y="125" text-anchor="middle" class="txt">Python</text>
+  <!-- Badge 1: JavaScript (float-odd) -->
+  <g class="float-odd">
+    <rect x="75" y="110" width="120" height="85" rx="10" class="badge-bg" stroke="#facc15" filter="url(#yellow-glow)"/>
+    <rect x="123" y="125" width="24" height="24" rx="3" fill="#facc15"/>
+    <text x="143" y="145" font-family="'Segoe UI', sans-serif" font-weight="900" font-size="12" fill="#000" text-anchor="end">JS</text>
+    <text x="135" y="172" text-anchor="middle" class="badge-text">JavaScript</text>
+  </g>
 
-  <polygon class="hex" fill="#22c55e" points="540,90 590,60 640,90 640,150 590,180 540,150"/>
-  <text x="590" y="125" text-anchor="middle" class="txt">C++</text>
+  <!-- Badge 2: React (float-even) -->
+  <g class="float-even">
+    <rect x="215" y="110" width="120" height="85" rx="10" class="badge-bg" stroke="#22d3ee" filter="url(#cyan-glow)"/>
+    <circle cx="275" cy="137" r="4.5" fill="#22d3ee"/>
+    <ellipse cx="275" cy="137" rx="18" ry="6.5" fill="none" stroke="#22d3ee" stroke-width="1.3" transform="rotate(30, 275, 137)"/>
+    <ellipse cx="275" cy="137" rx="18" ry="6.5" fill="none" stroke="#22d3ee" stroke-width="1.3" transform="rotate(90, 275, 137)"/>
+    <ellipse cx="275" cy="137" rx="18" ry="6.5" fill="none" stroke="#22d3ee" stroke-width="1.3" transform="rotate(150, 275, 137)"/>
+    <text x="275" y="172" text-anchor="middle" class="badge-text">React</text>
+  </g>
 
-  <polygon class="hex" fill="#38bdf8" points="660,90 710,60 760,90 760,150 710,180 660,150"/>
-  <text x="710" y="125" text-anchor="middle" class="txt">React</text>
+  <!-- Badge 3: Next.js (float-even) -->
+  <g class="float-even">
+    <rect x="75" y="230" width="120" height="85" rx="10" class="badge-bg" stroke="#e2e8f0"/>
+    <circle cx="135" cy="257" r="13" fill="#000" stroke="#475569" stroke-width="1"/>
+    <path d="M128 263 L128 251 L139 263 L139 251" stroke="#fff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+    <text x="135" y="292" text-anchor="middle" class="badge-text">Next.js</text>
+  </g>
 
-  <polygon class="hex" fill="#6366f1" points="780,90 830,60 880,90 880,150 830,180 780,150"/>
-  <text x="830" y="125" text-anchor="middle" class="txt">Next.js</text>
+  <!-- Badge 4: C++ (float-odd) -->
+  <g class="float-odd">
+    <rect x="215" y="230" width="120" height="85" rx="10" class="badge-bg" stroke="#3b82f6" filter="url(#blue-glow)"/>
+    <path d="M265 244 L285 244 L283 260 L275 265 L267 260 Z" fill="#2563eb"/>
+    <text x="275" y="257" font-family="'Segoe UI', sans-serif" font-weight="bold" font-size="9" fill="#fff" text-anchor="middle">C++</text>
+    <text x="275" y="292" text-anchor="middle" class="badge-text">C++</text>
+  </g>
 
-  <!-- ================= ROW 2 (OFFSET) ================= -->
-  <polygon class="hex" fill="#f97316" points="360,190 410,160 460,190 460,250 410,280 360,250"/>
-  <text x="410" y="225" text-anchor="middle" class="txt">Flask</text>
 
-  <polygon class="hex" fill="#16a34a" points="480,190 530,160 580,190 580,250 530,280 480,250"/>
-  <text x="530" y="225" text-anchor="middle" class="txt">MERN</text>
+  <!-- ================= CATEGORY 2: BACKEND & DATA ================= -->
+  <!-- Card Base -->
+  <rect x="425" y="40" width="350" height="370" rx="16" class="card-bg" filter="url(#card-glow)"/>
+  <text x="600" y="75" text-anchor="middle" class="card-title">BACKEND &amp; DATA</text>
 
-  <polygon class="hex" fill="#22c55e" points="600,190 650,160 700,190 700,250 650,280 600,250"/>
-  <text x="650" y="225" text-anchor="middle" class="txt">MongoDB</text>
+  <!-- Badge 1: Python (float-even) -->
+  <g class="float-even">
+    <rect x="460" y="110" width="120" height="85" rx="10" class="badge-bg" stroke="#3b82f6" filter="url(#blue-glow)"/>
+    <path d="M520 125 C513 125 513 130 510 130 C507 130 507 134 510 134 L514 134 L514 132 C514 129 517 129 520 129 L524 129 L524 126 C524 125 521 125 520 125 Z" fill="#38bdf8"/>
+    <path d="M520 147 C527 147 527 142 530 142 C533 142 533 138 530 138 L526 138 L526 140 C526 143 523 143 520 143 L516 143 L516 146 C516 147 519 147 520 147 Z" fill="#fbbf24"/>
+    <circle cx="513" cy="127" r="0.8" fill="#fff"/>
+    <circle cx="527" cy="145" r="0.8" fill="#fff"/>
+    <text x="520" y="172" text-anchor="middle" class="badge-text">Python</text>
+  </g>
 
-  <polygon class="hex" fill="#3b82f6" points="720,190 770,160 820,190 820,250 770,280 720,250"/>
-  <text x="770" y="225" text-anchor="middle" class="txt">MySQL</text>
+  <!-- Badge 2: MERN / Node (float-odd) -->
+  <g class="float-odd">
+    <rect x="600" y="110" width="120" height="85" rx="10" class="badge-bg" stroke="#4ade80" filter="url(#green-glow)"/>
+    <polygon points="660,123 671,129 671,141 660,147 649,141 649,129" fill="#22c55e" opacity="0.85"/>
+    <path d="M655,131 L660,136 L665,129" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+    <text x="660" y="172" text-anchor="middle" class="badge-text">MERN / Node</text>
+  </g>
 
-  <!-- ================= ROW 3 ================= -->
-  <polygon class="hex" fill="#0ea5e9" points="300,290 350,260 400,290 400,350 350,380 300,350"/>
-  <text x="350" y="325" text-anchor="middle" class="txt">GCP</text>
+  <!-- Badge 3: MongoDB (float-odd) -->
+  <g class="float-odd">
+    <rect x="460" y="230" width="120" height="85" rx="10" class="badge-bg" stroke="#10b981" filter="url(#green-glow)"/>
+    <path d="M520 123 C524 128 527 134 520 145 C513 134 516 128 520 123 Z" fill="#10b981" transform="translate(0, 2)"/>
+    <path d="M520 125 L520 147" stroke="#047857" stroke-width="1.2" transform="translate(0, 2)"/>
+    <text x="520" y="292" text-anchor="middle" class="badge-text">MongoDB</text>
+  </g>
 
-  <polygon class="hex" fill="#f59e0b" points="420,290 470,260 520,290 520,350 470,380 420,350"/>
-  <text x="470" y="325" text-anchor="middle" class="txt">AWS</text>
+  <!-- Badge 4: MySQL (float-even) -->
+  <g class="float-even">
+    <rect x="600" y="230" width="120" height="85" rx="10" class="badge-bg" stroke="#f97316" filter="url(#orange-glow)"/>
+    <ellipse cx="660" cy="242" rx="11" ry="3.5" fill="#0ea5e9"/>
+    <path d="M649 242 V249 A11 3.5 0 0 0 671 249 V242 Z" fill="#0ea5e9" opacity="0.8"/>
+    <path d="M649 249 V256 A11 3.5 0 0 0 671 256 V249 Z" fill="#0ea5e9" opacity="0.6"/>
+    <text x="660" y="292" text-anchor="middle" class="badge-text">MySQL</text>
+  </g>
 
-  <polygon class="hex" fill="#64748b" points="540,290 590,260 640,290 640,350 590,380 540,350"/>
-  <text x="590" y="325" text-anchor="middle" class="txt">MS Azure</text>
 
-  <polygon class="hex" fill="#a855f7" points="660,290 710,260 760,290 760,350 710,380 660,350"/>
-  <text x="710" y="325" text-anchor="middle" class="txt">CI/CD</text>
+  <!-- ================= CATEGORY 3: CLOUD & DEVOPS ================= -->
+  <!-- Card Base -->
+  <rect x="810" y="40" width="350" height="370" rx="16" class="card-bg" filter="url(#card-glow)"/>
+  <text x="995" y="75" text-anchor="middle" class="card-title">CLOUD &amp; DEVOPS</text>
 
-  <polygon class="hex" fill="#94a3b8" points="780,290 830,260 880,290 880,350 830,380 780,350"/>
-  <text x="830" y="325" text-anchor="middle" class="txt">Docker</text>
+  <!-- Badge 1: GCP (float-odd) -->
+  <g class="float-odd">
+    <rect x="845" y="100" width="120" height="85" rx="10" class="badge-bg" stroke="#facc15" filter="url(#yellow-glow)"/>
+    <polygon points="905,120 916,126 916,138 905,144 894,138 894,126" fill="none" stroke="#fff" stroke-width="1.2"/>
+    <line x1="905" y1="120" x2="905" y2="132" stroke="#ea4335" stroke-width="1.8"/>
+    <line x1="905" y1="132" x2="894" y2="138" stroke="#4285f4" stroke-width="1.8"/>
+    <line x1="905" y1="132" x2="916" y2="138" stroke="#fabc05" stroke-width="1.8"/>
+    <text x="905" y="162" text-anchor="middle" class="badge-text">GCP</text>
+  </g>
+
+  <!-- Badge 2: AWS (float-even) -->
+  <g class="float-even">
+    <rect x="985" y="100" width="120" height="85" rx="10" class="badge-bg" stroke="#f97316" filter="url(#orange-glow)"/>
+    <text x="1045" y="136" font-family="sans-serif" font-weight="900" font-size="11" fill="#fff" text-anchor="middle">aws</text>
+    <path d="M1033 141 Q1045 147 1057 141" fill="none" stroke="#f97316" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M1054 141 L1058 141 L1056 144 Z" fill="#f97316"/>
+    <text x="1045" y="162" text-anchor="middle" class="badge-text">AWS</text>
+  </g>
+
+  <!-- Badge 3: MS Azure (float-even) -->
+  <g class="float-even">
+    <rect x="845" y="200" width="120" height="85" rx="10" class="badge-bg" stroke="#3b82f6" filter="url(#blue-glow)"/>
+    <path d="M895 238 L905 220 L915 231 L907 240 Z" fill="#0078d4"/>
+    <path d="M905 220 L899 231 L910 227 Z" fill="#50e6ff" opacity="0.8"/>
+    <text x="905" y="262" text-anchor="middle" class="badge-text">MS Azure</text>
+  </g>
+
+  <!-- Badge 4: Docker (float-odd) -->
+  <g class="float-odd">
+    <rect x="985" y="200" width="120" height="85" rx="10" class="badge-bg" stroke="#22d3ee" filter="url(#cyan-glow)"/>
+    <path d="M1032 236 C1034 240 1041 240 1047 240 C1055 240 1058 236 1059 233 C1060 230 1057 229 1055 229 C1053 229 1052 231 1049 231 C1046 231 1045 228 1039 228 C1035 228 1032 231 1032 236 Z" fill="#0ea5e9"/>
+    <rect x="1037" y="222" width="4" height="4" fill="#38bdf8"/>
+    <rect x="1042" y="222" width="4" height="4" fill="#38bdf8"/>
+    <rect x="1047" y="222" width="4" height="4" fill="#38bdf8"/>
+    <text x="1045" y="262" text-anchor="middle" class="badge-text">Docker</text>
+  </g>
+
+  <!-- Badge 5: CI/CD (float-odd) -->
+  <g class="float-odd">
+    <rect x="915" y="300" width="120" height="85" rx="10" class="badge-bg" stroke="#a855f7" filter="url(#purple-glow)"/>
+    <path d="M965 330 C959 321 957 339 965 330 C973 321 981 321 985 330 C989 339 973 339 965 330 Z" fill="none" stroke="#ec4899" stroke-width="2" stroke-linecap="round"/>
+    <text x="975" y="362" text-anchor="middle" class="badge-text">CI/CD</text>
+  </g>
 
 </svg>
