@@ -2,7 +2,7 @@ name: Update Activity Cards
 
 on:
   schedule:
-    - cron: "0 */6 * * *"   # every 6 hours
+    - cron: "0 */6 * * *" # Every 6 hours
   workflow_dispatch:
 
 permissions:
@@ -14,55 +14,43 @@ jobs:
 
     steps:
       # --------------------------------------------------
-      # Checkout
+      # Checkout repository
       # --------------------------------------------------
       - name: Checkout repository
         uses: actions/checkout@v6
 
       # --------------------------------------------------
-      # Create directory
+      # Create activity directory
       # --------------------------------------------------
       - name: Create assets directory
         run: mkdir -p assets/activity
 
       # --------------------------------------------------
-      # GitHub Stats
-      # Generated locally by the GitHub Action
+      # Generate GitHub Stats
       # --------------------------------------------------
       - name: Generate GitHub Stats
         uses: stats-organization/github-readme-stats-action@v2
         with:
           card: stats
-          options: >-
-            username=Asachdeva001
-            &show_icons=true
-            &theme=blue-green
-            &count_private=true
+          options: 'username=Asachdeva001&show_icons=true&theme=blue-green&count_private=true'
           path: assets/activity/github-stats.svg
           token: ${{ secrets.METRICS_TOKEN }}
           fail_on_error: true
 
       # --------------------------------------------------
-      # Top Languages
+      # Generate Top Languages
       # --------------------------------------------------
       - name: Generate Top Languages
         uses: stats-organization/github-readme-stats-action@v2
         with:
           card: top-langs
-          options: >-
-            username=Asachdeva001
-            &hide=TeX,OpenEdge%20ABL
-            &layout=compact
-            &show_icons=true
-            &theme=blue-green
-            &count_private=true
+          options: 'username=Asachdeva001&hide=TeX,OpenEdge%20ABL&layout=compact&show_icons=true&theme=blue-green&count_private=true'
           path: assets/activity/top-langs.svg
           token: ${{ secrets.METRICS_TOKEN }}
           fail_on_error: true
 
       # --------------------------------------------------
       # Generate GitHub Streak
-      # Uses GitHub GraphQL API directly
       # --------------------------------------------------
       - name: Generate GitHub Streak
         env:
@@ -74,11 +62,18 @@ jobs:
           import subprocess
           from datetime import datetime, timedelta, timezone
 
-          username = "Asachdeva001"
+          USERNAME = "Asachdeva001"
+          OUTPUT = "assets/activity/streak.svg"
 
+          # ----------------------------------------------
+          # Date range
+          # ----------------------------------------------
           today = datetime.now(timezone.utc).date()
           start = today - timedelta(days=370)
 
+          # ----------------------------------------------
+          # GitHub GraphQL query
+          # ----------------------------------------------
           query = """
           query($login: String!, $from: DateTime!, $to: DateTime!) {
             user(login: $login) {
@@ -98,7 +93,7 @@ jobs:
           """
 
           variables = {
-              "login": username,
+              "login": USERNAME,
               "from": f"{start}T00:00:00Z",
               "to": f"{today}T23:59:59Z"
           }
@@ -108,6 +103,9 @@ jobs:
               "variables": variables
           })
 
+          # ----------------------------------------------
+          # Call GitHub GraphQL API
+          # ----------------------------------------------
           result = subprocess.run(
               [
                   "curl",
@@ -115,24 +113,39 @@ jobs:
                   "-X", "POST",
                   "-H", "Authorization: bearer " + os.environ["GH_TOKEN"],
                   "-H", "Content-Type: application/json",
-                  "-H", "X-GitHub-Api-Version: 2026-03-10",
+                  "-H", "X-GitHub-Api-Version: 2022-11-28",
                   "https://api.github.com/graphql",
                   "-d", payload
               ],
               capture_output=True,
-              text=True,
-              check=True
+              text=True
           )
+
+          if result.returncode != 0:
+              raise RuntimeError(result.stderr)
 
           data = json.loads(result.stdout)
 
           if "errors" in data:
-              raise RuntimeError(json.dumps(data["errors"], indent=2))
+              raise RuntimeError(
+                  json.dumps(data["errors"], indent=2)
+              )
 
-          weeks = data["data"]["user"]["contributionsCollection"][
-              "contributionCalendar"
-          ]["weeks"]
+          user = data.get("data", {}).get("user")
 
+          if not user:
+              raise RuntimeError("GitHub user data was not returned.")
+
+          calendar = (
+              user["contributionsCollection"]
+              ["contributionCalendar"]
+          )
+
+          weeks = calendar["weeks"]
+
+          # ----------------------------------------------
+          # Flatten contribution days
+          # ----------------------------------------------
           days = []
 
           for week in weeks:
@@ -144,18 +157,19 @@ jobs:
 
           days.sort(key=lambda x: x["date"])
 
-          # ----------------------------------------------
-          # Calculate current streak
-          # ----------------------------------------------
           day_map = {
-              x["date"]: x["count"]
-              for x in days
+              day["date"]: day["count"]
+              for day in days
           }
 
+          # ----------------------------------------------
+          # Current streak
+          # ----------------------------------------------
           current_streak = 0
           cursor = today
 
-          # If today has no contribution, start from yesterday.
+          # If today has no contribution yet,
+          # start counting from yesterday.
           if day_map.get(str(cursor), 0) == 0:
               cursor -= timedelta(days=1)
 
@@ -164,7 +178,7 @@ jobs:
               cursor -= timedelta(days=1)
 
           # ----------------------------------------------
-          # Calculate longest streak
+          # Longest streak
           # ----------------------------------------------
           longest_streak = 0
           running = 0
@@ -172,11 +186,20 @@ jobs:
           for day in days:
               if day["count"] > 0:
                   running += 1
-                  longest_streak = max(longest_streak, running)
+                  longest_streak = max(
+                      longest_streak,
+                      running
+                  )
               else:
                   running = 0
 
-          total = sum(x["count"] for x in days)
+          # ----------------------------------------------
+          # Total contributions
+          # ----------------------------------------------
+          total = sum(
+              day["count"]
+              for day in days
+          )
 
           # ----------------------------------------------
           # Generate SVG
@@ -184,90 +207,116 @@ jobs:
           width = 495
           height = 195
 
-          svg = f'''<svg xmlns="http://www.w3.org/2000/svg"
-          width="{width}"
-          height="{height}"
-          viewBox="0 0 {width} {height}"
-          role="img"
-          aria-label="GitHub streak statistics">
+          svg = f'''<svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="{width}"
+            height="{height}"
+            viewBox="0 0 {width} {height}"
+            role="img"
+            aria-label="GitHub streak statistics">
 
-            <rect width="100%" height="100%" rx="10"
-                  fill="#0d1117"
-                  stroke="#30363d"/>
+            <rect
+              width="100%"
+              height="100%"
+              rx="10"
+              fill="#0d1117"
+              stroke="#30363d"
+            />
 
-            <text x="25" y="42"
-                  fill="#58a6ff"
-                  font-family="Arial, Helvetica, sans-serif"
-                  font-size="22"
-                  font-weight="700">
+            <text
+              x="25"
+              y="42"
+              fill="#58a6ff"
+              font-family="Arial, Helvetica, sans-serif"
+              font-size="22"
+              font-weight="700">
               GitHub Streak
             </text>
 
-            <text x="25" y="78"
-                  fill="#8b949e"
-                  font-family="Arial, Helvetica, sans-serif"
-                  font-size="14">
+            <text
+              x="25"
+              y="78"
+              fill="#8b949e"
+              font-family="Arial, Helvetica, sans-serif"
+              font-size="14">
               Current streak
             </text>
 
-            <text x="25" y="113"
-                  fill="#f0f6fc"
-                  font-family="Arial, Helvetica, sans-serif"
-                  font-size="30"
-                  font-weight="700">
+            <text
+              x="25"
+              y="113"
+              fill="#f0f6fc"
+              font-family="Arial, Helvetica, sans-serif"
+              font-size="30"
+              font-weight="700">
               {current_streak} days
             </text>
 
-            <text x="260" y="78"
-                  fill="#8b949e"
-                  font-family="Arial, Helvetica, sans-serif"
-                  font-size="14">
+            <text
+              x="260"
+              y="78"
+              fill="#8b949e"
+              font-family="Arial, Helvetica, sans-serif"
+              font-size="14">
               Longest streak
             </text>
 
-            <text x="260" y="113"
-                  fill="#f0f6fc"
-                  font-family="Arial, Helvetica, sans-serif"
-                  font-size="30"
-                  font-weight="700">
+            <text
+              x="260"
+              y="113"
+              fill="#f0f6fc"
+              font-family="Arial, Helvetica, sans-serif"
+              font-size="30"
+              font-weight="700">
               {longest_streak} days
             </text>
 
-            <text x="25" y="158"
-                  fill="#8b949e"
-                  font-family="Arial, Helvetica, sans-serif"
-                  font-size="13">
+            <text
+              x="25"
+              y="158"
+              fill="#8b949e"
+              font-family="Arial, Helvetica, sans-serif"
+              font-size="13">
               {total:,} contributions in the last year
             </text>
 
-            <text x="25" y="180"
-                  fill="#484f58"
-                  font-family="Arial, Helvetica, sans-serif"
-                  font-size="11">
+            <text
+              x="25"
+              y="180"
+              fill="#484f58"
+              font-family="Arial, Helvetica, sans-serif"
+              font-size="11">
               Updated automatically every 6 hours
             </text>
 
           </svg>
           '''
 
-          os.makedirs("assets/activity", exist_ok=True)
+          os.makedirs(
+              os.path.dirname(OUTPUT),
+              exist_ok=True
+          )
 
           with open(
-              "assets/activity/streak.svg",
+              OUTPUT,
               "w",
               encoding="utf-8"
-          ) as f:
-              f.write(svg)
+          ) as file:
+              file.write(svg)
 
           print(
-              f"Current streak: {current_streak} days | "
-              f"Longest streak: {longest_streak} days | "
+              f"Current streak: {current_streak} days"
+          )
+          print(
+              f"Longest streak: {longest_streak} days"
+          )
+          print(
               f"Contributions: {total}"
           )
           PY
 
       # --------------------------------------------------
-      # Commit changes
+      # Commit generated cards
       # --------------------------------------------------
       - name: Commit and push if changed
         run: |
