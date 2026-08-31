@@ -32,7 +32,7 @@ jobs:
         uses: stats-organization/github-readme-stats-action@v2
         with:
           card: stats
-          options: 'username=Asachdeva001&show_icons=true&theme=blue-green&count_private=true'
+          options: 'username=Asachdeva001&show_icons=true&theme=blue-green&count_private=true&hide_rank=true'
           path: assets/activity/github-stats.svg
           token: ${{ secrets.METRICS_TOKEN }}
           fail_on_error: true
