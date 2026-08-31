@@ -15,8 +15,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.METRICS_TOKEN }}
 
       - name: Create assets directory
         run: mkdir -p assets/activity
@@ -56,8 +54,8 @@ jobs:
 
       - name: Commit and push if changed
         run: |
-          git config user.name "Aashish Sachdeva"
-          git config user.email "ashisach001@gmail.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
           git add assets/activity
 
