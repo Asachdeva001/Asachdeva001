@@ -1,239 +1,207 @@
+<svg viewBox="0 0 1200 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Top Languages Used">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="50%" stop-color="#090d1a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
 
-      <svg
-        width="300"
-        height="165"
-        viewBox="0 0 300 165"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        role="img"
-        aria-labelledby="descId"
-      >
-        <title id="titleId"></title>
-        <desc id="descId"></desc>
-        <style>
-          .header {
-            font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
-            fill: #2f97c1;
-            animation: fadeInAnimation 0.8s ease-in-out forwards;
-          }
-          @supports(-moz-appearance: auto) {
-            /* Selector detects Firefox */
-            .header { font-size: 15.5px; }
-          }
-          
-    @keyframes slideInAnimation {
-      from {
-        width: 0;
-      }
-      to {
-        width: calc(100%-100px);
-      }
-    }
-    @keyframes growWidthAnimation {
-      from {
-        width: 0;
-      }
-      to {
-        width: 100%;
-      }
-    }
-    .stat {
-      font: 600 14px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif; fill: #0cf574;
-    }
-    @supports(-moz-appearance: auto) {
-      /* Selector detects Firefox */
-      .stat { font-size:12px; }
-    }
-    .bold { font-weight: 700 }
-    .lang-name {
-      font: 400 11px "Segoe UI", Ubuntu, Sans-Serif;
-      fill: #0cf574;
-    }
-    .stagger {
-      opacity: 0;
-      animation: fadeInAnimation 0.3s ease-in-out forwards;
-    }
-    #rect-mask rect{
-      animation: slideInAnimation 1s ease-in-out forwards;
-    }
-    .lang-progress{
-      animation: growWidthAnimation 0.6s ease-in-out forwards;
-    }
-    
+    <!-- Glowing Filters -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
 
-          
-      /* Animations */
-      @keyframes scaleInAnimation {
-        from {
-          transform: translate(-5px, 5px) scale(0);
-        }
-        to {
-          transform: translate(-5px, 5px) scale(1);
-        }
-      }
-      @keyframes fadeInAnimation {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-    
-          
-        </style>
+    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#3178c6" flood-opacity="0.4"/>
+    </filter>
 
-        
+    <filter id="card-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
 
-        <rect
-          data-testid="card-bg"
-          x="0.5"
-          y="0.5"
-          rx="4.5"
-          height="99%"
-          stroke="#e4e2e2"
-          width="299"
-          fill="#040f0f"
-          stroke-opacity="1"
-        />
+    <filter id="gold-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#facc15" flood-opacity="0.4"/>
+    </filter>
+    <filter id="cyan-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#38bdf8" flood-opacity="0.4"/>
+    </filter>
+    <filter id="purple-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#a855f7" flood-opacity="0.4"/>
+    </filter>
+    <filter id="emerald-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#34d399" flood-opacity="0.4"/>
+    </filter>
+    <filter id="orange-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#f97316" flood-opacity="0.4"/>
+    </filter>
+    <filter id="red-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#ef4444" flood-opacity="0.4"/>
+    </filter>
+  </defs>
 
-        
-      <g
-        data-testid="card-title"
-        transform="translate(25, 35)"
-      >
-        <g transform="translate(0, 0)">
-      <text
-        x="0"
-        y="0"
-        class="header"
-        data-testid="header"
-      >Most Used Languages</text>
-    </g>
-      </g>
-    
+  <style>
+    .terminal-title {
+      font-family: 'Consolas', 'Fira Code', 'Courier New', monospace;
+      font-size: 13px;
+      fill: #64748b;
+      font-weight: 500;
+    }
+    .prompt-text {
+      font-family: 'Consolas', 'Fira Code', 'Courier New', monospace;
+      font-size: 16px;
+      fill: #38bdf8;
+      font-weight: 600;
+    }
+    .status-text-green {
+      font-family: 'Consolas', 'Fira Code', 'Courier New', monospace;
+      font-size: 13px;
+      fill: #34d399;
+    }
+    .metric-value {
+      font-family: 'Segoe UI', -apple-system, sans-serif;
+      font-weight: 700;
+      fill: #f0f6fc;
+    }
+    .metric-label {
+      font-family: 'Segoe UI', -apple-system, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      fill: #94a3b8;
+      letter-spacing: 0.8px;
+    }
+    .metric-subtext {
+      font-family: 'Segoe UI', -apple-system, sans-serif;
+      font-size: 11px;
+      fill: #64748b;
+    }
+    .grid-lines {
+      fill: none;
+      stroke: #1e293b;
+      stroke-width: 0.8;
+      stroke-dasharray: 4 4;
+      opacity: 0.3;
+    }
+    .tile-bg {
+      fill: #090d16;
+      fill-opacity: 0.85;
+      stroke: #1e293b;
+      stroke-width: 1.5;
+    }
+  </style>
 
-        <g
-          data-testid="main-card-body"
-          transform="translate(0, 55)"
-        >
-          
-    <svg data-testid="lang-items" x="25">
-      
+  <!-- Background Rect -->
+  <rect width="1200" height="340" fill="url(#bg-grad)" />
+
+  <!-- Ambient Grid Lines -->
+  <g class="grid-lines">
+    <path d="M 0,40 L 1200,40 M 0,80 L 1200,80 M 0,120 L 1200,120 M 0,160 L 1200,160 M 0,200 L 1200,200 M 0,240 L 1200,240 M 0,280 L 1200,280 M 0,320 L 1200,320" />
+    <path d="M 100,0 L 100,340 M 200,0 L 200,340 M 300,0 L 300,340 M 400,0 L 400,340 M 500,0 L 500,340 M 600,0 L 600,340 M 700,0 L 700,340 M 800,0 L 800,340 M 900,0 L 900,340 M 1000,0 L 1000,340 M 1100,0 L 1100,340" />
+  </g>
+
+  <!-- Glowing Particles in Background -->
+  <circle cx="120" cy="80" r="60" fill="#06b6d4" fill-opacity="0.07" filter="url(#glow)">
+    <animate attributeName="cx" values="120;220;120" dur="15s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1080" cy="260" r="70" fill="#a855f7" fill-opacity="0.06" filter="url(#glow)">
+    <animate attributeName="cx" values="1080;980;1080" dur="18s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Outer Glow Border -->
+  <rect x="40" y="25" width="1120" height="290" rx="12" fill="none" stroke="#3178c6" stroke-width="1.5" filter="url(#neon-glow)" opacity="0.35"/>
+
+  <!-- Main Window Body -->
+  <rect x="40" y="25" width="1120" height="290" rx="12" fill="#050814" fill-opacity="0.94" stroke="#1e293b" stroke-width="1.5" filter="url(#card-shadow)"/>
+
+  <!-- Terminal Header -->
+  <path d="M 40 37 A 12 12 0 0 1 52 25 L 1148 25 A 12 12 0 0 1 1160 37 L 1160 60 L 40 60 Z" fill="#0b0f19" stroke="#1e293b" stroke-width="0.5"/>
   
-      <mask id="rect-mask">
-          <rect x="0" y="0" width="250" height="8" fill="white" rx="5"/>
-        </mask>
-        
-        <rect
-          mask="url(#rect-mask)"
-          data-testid="lang-progress"
-          x="0"
-          y="0"
-          width="173.94"
-          height="8"
-          fill="#DA5B0B"
-        />
-      
-        <rect
-          mask="url(#rect-mask)"
-          data-testid="lang-progress"
-          x="173.94"
-          y="0"
-          width="30.3"
-          height="8"
-          fill="#f1e05a"
-        />
-      
-        <rect
-          mask="url(#rect-mask)"
-          data-testid="lang-progress"
-          x="204.24"
-          y="0"
-          width="25.81"
-          height="8"
-          fill="#3178c6"
-        />
-      
-        <rect
-          mask="url(#rect-mask)"
-          data-testid="lang-progress"
-          x="230.05"
-          y="0"
-          width="12.87"
-          height="8"
-          fill="#3572A5"
-        />
-      
-        <rect
-          mask="url(#rect-mask)"
-          data-testid="lang-progress"
-          x="242.92000000000002"
-          y="0"
-          width="14.42"
-          height="8"
-          fill="#e34c26"
-        />
-      
-        <rect
-          mask="url(#rect-mask)"
-          data-testid="lang-progress"
-          x="247.34"
-          y="0"
-          width="12.67"
-          height="8"
-          fill="#663399"
-        />
-      
-      
-    <g transform="translate(0, 25)">
-      <g transform="translate(0, 0)"><g transform="translate(0, 0)">
-    <g class="stagger" style="animation-delay: 450ms">
-      <circle cx="5" cy="6" r="5" fill="#DA5B0B" />
-      <text data-testid="lang-name" x="15" y="10" class='lang-name'>
-        Jupyter Notebook 69.58%
-      </text>
-    </g>
-  </g><g transform="translate(0, 25)">
-    <g class="stagger" style="animation-delay: 600ms">
-      <circle cx="5" cy="6" r="5" fill="#f1e05a" />
-      <text data-testid="lang-name" x="15" y="10" class='lang-name'>
-        JavaScript 12.12%
-      </text>
-    </g>
-  </g><g transform="translate(0, 50)">
-    <g class="stagger" style="animation-delay: 750ms">
-      <circle cx="5" cy="6" r="5" fill="#3178c6" />
-      <text data-testid="lang-name" x="15" y="10" class='lang-name'>
-        TypeScript 10.32%
-      </text>
-    </g>
-  </g></g><g transform="translate(150, 0)"><g transform="translate(0, 0)">
-    <g class="stagger" style="animation-delay: 450ms">
-      <circle cx="5" cy="6" r="5" fill="#3572A5" />
-      <text data-testid="lang-name" x="15" y="10" class='lang-name'>
-        Python 5.15%
-      </text>
-    </g>
-  </g><g transform="translate(0, 25)">
-    <g class="stagger" style="animation-delay: 600ms">
-      <circle cx="5" cy="6" r="5" fill="#e34c26" />
-      <text data-testid="lang-name" x="15" y="10" class='lang-name'>
-        HTML 1.77%
-      </text>
-    </g>
-  </g><g transform="translate(0, 50)">
-    <g class="stagger" style="animation-delay: 750ms">
-      <circle cx="5" cy="6" r="5" fill="#663399" />
-      <text data-testid="lang-name" x="15" y="10" class='lang-name'>
-        CSS 1.07%
-      </text>
-    </g>
-  </g></g>
-    </g>
+  <!-- Window Controls -->
+  <circle cx="65" cy="42" r="6" fill="#ef4444" />
+  <circle cx="85" cy="42" r="6" fill="#eab308" />
+  <circle cx="105" cy="42" r="6" fill="#22c55e" />
+
+  <!-- Terminal Title -->
+  <text x="600" y="46" text-anchor="middle" class="terminal-title">aashish@sachdeva:~/language-metrics</text>
+
+  <!-- Card Content -->
   
-    </svg>
+  <text x="75" y="95" class="prompt-text" filter="url(#glow)">> npx get-top-languages</text>
+
+  <!-- Segmented Multi-Color Progress Bar -->
+  <g>
+    <rect x="75" y="120" width="1050" height="16" rx="8" fill="#090d16" stroke="#1e293b" stroke-width="1.5"/>
+    <clipPath id="bar-clip">
+      <rect x="75" y="120" width="1050" height="16" rx="8"/>
+    </clipPath>
+    <g clip-path="url(#bar-clip)">
+      <rect x="75.00" y="120" width="716.53" height="16" fill="#DA5B0B"/>
+<rect x="791.53" y="120" width="124.81" height="16" fill="#f1e05a"/>
+<rect x="916.34" y="120" width="106.31" height="16" fill="#3178c6"/>
+<rect x="1022.65" y="120" width="53.00" height="16" fill="#3572A5"/>
+<rect x="1075.65" y="120" width="18.22" height="16" fill="#e34c26"/>
+<rect x="1093.87" y="120" width="10.98" height="16" fill="#663399"/>
+
+    </g>
+  </g>
+
+  <!-- Language Grid Cards -->
   
-        </g>
-      </svg>
+    <g transform="translate(75, 155)">
+      <rect x="0" y="0" width="330" height="48" rx="8" class="tile-bg" stroke="#DA5B0B" stroke-opacity="0.6"/>
+      <circle cx="20" cy="24" r="6" fill="#DA5B0B"/>
+      <text x="35" y="29" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#f0f6fc">Jupyter Notebook</text>
+      <text x="315" y="29" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#DA5B0B">68.2%</text>
+      <line x1="35" y1="36" x2="226.1" y2="36" stroke="#DA5B0B" stroke-width="2" stroke-linecap="round"/>
+    </g>
     
+    <g transform="translate(435, 155)">
+      <rect x="0" y="0" width="330" height="48" rx="8" class="tile-bg" stroke="#f1e05a" stroke-opacity="0.6"/>
+      <circle cx="20" cy="24" r="6" fill="#f1e05a"/>
+      <text x="35" y="29" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#f0f6fc">JavaScript</text>
+      <text x="315" y="29" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#f1e05a">11.9%</text>
+      <line x1="35" y1="36" x2="68.3" y2="36" stroke="#f1e05a" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    
+    <g transform="translate(795, 155)">
+      <rect x="0" y="0" width="330" height="48" rx="8" class="tile-bg" stroke="#3178c6" stroke-opacity="0.6"/>
+      <circle cx="20" cy="24" r="6" fill="#3178c6"/>
+      <text x="35" y="29" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#f0f6fc">TypeScript</text>
+      <text x="315" y="29" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#3178c6">10.1%</text>
+      <line x1="35" y1="36" x2="63.3" y2="36" stroke="#3178c6" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    
+    <g transform="translate(75, 213)">
+      <rect x="0" y="0" width="330" height="48" rx="8" class="tile-bg" stroke="#3572A5" stroke-opacity="0.6"/>
+      <circle cx="20" cy="24" r="6" fill="#3572A5"/>
+      <text x="35" y="29" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#f0f6fc">Python</text>
+      <text x="315" y="29" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#3572A5">5.0%</text>
+      <line x1="35" y1="36" x2="49.1" y2="36" stroke="#3572A5" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    
+    <g transform="translate(435, 213)">
+      <rect x="0" y="0" width="330" height="48" rx="8" class="tile-bg" stroke="#e34c26" stroke-opacity="0.6"/>
+      <circle cx="20" cy="24" r="6" fill="#e34c26"/>
+      <text x="35" y="29" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#f0f6fc">HTML</text>
+      <text x="315" y="29" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#e34c26">1.7%</text>
+      <line x1="35" y1="36" x2="39.9" y2="36" stroke="#e34c26" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    
+    <g transform="translate(795, 213)">
+      <rect x="0" y="0" width="330" height="48" rx="8" class="tile-bg" stroke="#663399" stroke-opacity="0.6"/>
+      <circle cx="20" cy="24" r="6" fill="#663399"/>
+      <text x="35" y="29" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#f0f6fc">CSS</text>
+      <text x="315" y="29" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#663399">1.0%</text>
+      <line x1="35" y1="36" x2="37.9" y2="36" stroke="#663399" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    
+
+  <!-- Footer Status -->
+  <text x="75" y="292" class="status-text-green">> language breakdown: Analyzed across user repositories</text>
+
+
+</svg>

@@ -1,221 +1,196 @@
+<svg viewBox="0 0 1200 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GitHub Statistics">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="50%" stop-color="#090d1a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
 
-      <svg
-        width="352.8666648864746"
-        height="195"
-        viewBox="0 0 352.8666648864746 195"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        role="img"
-        aria-labelledby="descId"
-      >
-        <title id="titleId">Aashish Sachdeva&#39;s GitHub Stats, Rank: C+</title>
-        <desc id="descId">Total Stars Earned: 0, Total Commits  (last year) : 399, Total PRs: 26, Total Issues: 0, Contributed to (last year): 7</desc>
-        <style>
-          .header {
-            font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
-            fill: #2f97c1;
-            animation: fadeInAnimation 0.8s ease-in-out forwards;
-          }
-          @supports(-moz-appearance: auto) {
-            /* Selector detects Firefox */
-            .header { font-size: 15.5px; }
-          }
-          
-    .stat {
-      font: 600 14px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif; fill: #0cf574;
+    <!-- Glowing Filters -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#0ea5e9" flood-opacity="0.4"/>
+    </filter>
+
+    <filter id="card-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+
+    <filter id="gold-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#facc15" flood-opacity="0.4"/>
+    </filter>
+    <filter id="cyan-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#38bdf8" flood-opacity="0.4"/>
+    </filter>
+    <filter id="purple-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#a855f7" flood-opacity="0.4"/>
+    </filter>
+    <filter id="emerald-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#34d399" flood-opacity="0.4"/>
+    </filter>
+    <filter id="orange-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#f97316" flood-opacity="0.4"/>
+    </filter>
+    <filter id="red-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#ef4444" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <style>
+    .terminal-title {
+      font-family: 'Consolas', 'Fira Code', 'Courier New', monospace;
+      font-size: 13px;
+      fill: #64748b;
+      font-weight: 500;
     }
-    @supports(-moz-appearance: auto) {
-      /* Selector detects Firefox */
-      .stat { font-size:12px; }
-    }
-    .stagger {
-      opacity: 0;
-      animation: fadeInAnimation 0.3s ease-in-out forwards;
-    }
-    .rank-text {
-      font: 800 24px 'Segoe UI', Ubuntu, Sans-Serif; fill: #0cf574;
-      animation: scaleInAnimation 0.3s ease-in-out forwards;
-    }
-    .rank-percentile-header {
-      font-size: 14px;
-    }
-    .rank-percentile-text {
+    .prompt-text {
+      font-family: 'Consolas', 'Fira Code', 'Courier New', monospace;
       font-size: 16px;
+      fill: #38bdf8;
+      font-weight: 600;
     }
-    
-    .not_bold { font-weight: 400 }
-    .bold { font-weight: 700 }
-    .icon {
-      fill: #f5b700;
-      display: block;
+    .status-text-green {
+      font-family: 'Consolas', 'Fira Code', 'Courier New', monospace;
+      font-size: 13px;
+      fill: #34d399;
     }
-
-    .rank-circle-rim {
-      stroke: #2f97c1;
+    .metric-value {
+      font-family: 'Segoe UI', -apple-system, sans-serif;
+      font-weight: 700;
+      fill: #f0f6fc;
+    }
+    .metric-label {
+      font-family: 'Segoe UI', -apple-system, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      fill: #94a3b8;
+      letter-spacing: 0.8px;
+    }
+    .metric-subtext {
+      font-family: 'Segoe UI', -apple-system, sans-serif;
+      font-size: 11px;
+      fill: #64748b;
+    }
+    .grid-lines {
       fill: none;
-      stroke-width: 6;
-      opacity: 0.2;
+      stroke: #1e293b;
+      stroke-width: 0.8;
+      stroke-dasharray: 4 4;
+      opacity: 0.3;
     }
-    .rank-circle {
-      stroke: #2f97c1;
-      stroke-dasharray: 250;
-      fill: none;
-      stroke-width: 6;
-      stroke-linecap: round;
-      opacity: 0.8;
-      transform-origin: -10px 8px;
-      transform: rotate(-90deg);
-      animation: rankAnimation 1s forwards ease-in-out;
+    .tile-bg {
+      fill: #090d16;
+      fill-opacity: 0.85;
+      stroke: #1e293b;
+      stroke-width: 1.5;
     }
-    
-    @keyframes rankAnimation {
-      from {
-        stroke-dashoffset: 251.32741228718345;
-      }
-      to {
-        stroke-dashoffset: 202.3770450952174;
-      }
-    }
-  
-  
+  </style>
 
-          
-      /* Animations */
-      @keyframes scaleInAnimation {
-        from {
-          transform: translate(-5px, 5px) scale(0);
-        }
-        to {
-          transform: translate(-5px, 5px) scale(1);
-        }
-      }
-      @keyframes fadeInAnimation {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-    
-          
-        </style>
+  <!-- Background Rect -->
+  <rect width="1200" height="340" fill="url(#bg-grad)" />
 
-        
-
-        <rect
-          data-testid="card-bg"
-          x="0.5"
-          y="0.5"
-          rx="4.5"
-          height="99%"
-          stroke="#e4e2e2"
-          width="351.8666648864746"
-          fill="#040f0f"
-          stroke-opacity="1"
-        />
-
-        
-      <g
-        data-testid="card-title"
-        transform="translate(25, 35)"
-      >
-        <g transform="translate(0, 0)">
-      <text
-        x="0"
-        y="0"
-        class="header"
-        data-testid="header"
-      >Aashish Sachdeva&#39;s GitHub Stats</text>
-    </g>
-      </g>
-    
-
-        <g
-          data-testid="main-card-body"
-          transform="translate(0, 55)"
-        >
-          
-    
-    <svg x="0" y="0">
-      <g transform="translate(0, 0)">
-    <g class="stagger" style="animation-delay: 450ms" transform="translate(25, 0)">
-      
-    <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-      <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"/>
-    </svg>
-  
-      <text class="stat  bold" x="25" y="12.5">Total Stars Earned:</text>
-      <text
-        class="stat  bold"
-        x="224.01"
-        y="12.5"
-        data-testid="stars"
-      >0</text>
-    </g>
-  </g><g transform="translate(0, 25)">
-    <g class="stagger" style="animation-delay: 600ms" transform="translate(25, 0)">
-      
-    <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-      <path fill-rule="evenodd" d="M1.643 3.143L.427 1.927A.25.25 0 000 2.104V5.75c0 .138.112.25.25.25h3.646a.25.25 0 00.177-.427L2.715 4.215a6.5 6.5 0 11-1.18 4.458.75.75 0 10-1.493.154 8.001 8.001 0 101.6-5.684zM7.75 4a.75.75 0 01.75.75v2.992l2.028.812a.75.75 0 01-.557 1.392l-2.5-1A.75.75 0 017 8.25v-3.5A.75.75 0 017.75 4z"/>
-    </svg>
-  
-      <text class="stat  bold" x="25" y="12.5">Total Commits (last year):</text>
-      <text
-        class="stat  bold"
-        x="224.01"
-        y="12.5"
-        data-testid="commits"
-      >399</text>
-    </g>
-  </g><g transform="translate(0, 50)">
-    <g class="stagger" style="animation-delay: 750ms" transform="translate(25, 0)">
-      
-    <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-      <path fill-rule="evenodd" d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5A2.5 2.5 0 0011 2.5zm1 10.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.75 12a.75.75 0 100 1.5.75.75 0 000-1.5z"/>
-    </svg>
-  
-      <text class="stat  bold" x="25" y="12.5">Total PRs:</text>
-      <text
-        class="stat  bold"
-        x="224.01"
-        y="12.5"
-        data-testid="prs"
-      >26</text>
-    </g>
-  </g><g transform="translate(0, 75)">
-    <g class="stagger" style="animation-delay: 900ms" transform="translate(25, 0)">
-      
-    <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-      <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm9 3a1 1 0 11-2 0 1 1 0 012 0zm-.25-6.25a.75.75 0 00-1.5 0v3.5a.75.75 0 001.5 0v-3.5z"/>
-    </svg>
-  
-      <text class="stat  bold" x="25" y="12.5">Total Issues:</text>
-      <text
-        class="stat  bold"
-        x="224.01"
-        y="12.5"
-        data-testid="issues"
-      >0</text>
-    </g>
-  </g><g transform="translate(0, 100)">
-    <g class="stagger" style="animation-delay: 1050ms" transform="translate(25, 0)">
-      
-    <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-      <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/>
-    </svg>
-  
-      <text class="stat  bold" x="25" y="12.5">Contributed to (last year):</text>
-      <text
-        class="stat  bold"
-        x="224.01"
-        y="12.5"
-        data-testid="contribs"
-      >7</text>
-    </g>
+  <!-- Ambient Grid Lines -->
+  <g class="grid-lines">
+    <path d="M 0,40 L 1200,40 M 0,80 L 1200,80 M 0,120 L 1200,120 M 0,160 L 1200,160 M 0,200 L 1200,200 M 0,240 L 1200,240 M 0,280 L 1200,280 M 0,320 L 1200,320" />
+    <path d="M 100,0 L 100,340 M 200,0 L 200,340 M 300,0 L 300,340 M 400,0 L 400,340 M 500,0 L 500,340 M 600,0 L 600,340 M 700,0 L 700,340 M 800,0 L 800,340 M 900,0 L 900,340 M 1000,0 L 1000,340 M 1100,0 L 1100,340" />
   </g>
-    </svg>
+
+  <!-- Glowing Particles in Background -->
+  <circle cx="120" cy="80" r="60" fill="#06b6d4" fill-opacity="0.07" filter="url(#glow)">
+    <animate attributeName="cx" values="120;220;120" dur="15s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1080" cy="260" r="70" fill="#a855f7" fill-opacity="0.06" filter="url(#glow)">
+    <animate attributeName="cx" values="1080;980;1080" dur="18s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Outer Glow Border -->
+  <rect x="40" y="25" width="1120" height="290" rx="12" fill="none" stroke="#0ea5e9" stroke-width="1.5" filter="url(#neon-glow)" opacity="0.35"/>
+
+  <!-- Main Window Body -->
+  <rect x="40" y="25" width="1120" height="290" rx="12" fill="#050814" fill-opacity="0.94" stroke="#1e293b" stroke-width="1.5" filter="url(#card-shadow)"/>
+
+  <!-- Terminal Header -->
+  <path d="M 40 37 A 12 12 0 0 1 52 25 L 1148 25 A 12 12 0 0 1 1160 37 L 1160 60 L 40 60 Z" fill="#0b0f19" stroke="#1e293b" stroke-width="0.5"/>
   
-        </g>
-      </svg>
-    
+  <!-- Window Controls -->
+  <circle cx="65" cy="42" r="6" fill="#ef4444" />
+  <circle cx="85" cy="42" r="6" fill="#eab308" />
+  <circle cx="105" cy="42" r="6" fill="#22c55e" />
+
+  <!-- Terminal Title -->
+  <text x="600" y="46" text-anchor="middle" class="terminal-title">aashish@sachdeva:~/github-stats</text>
+
+  <!-- Card Content -->
+  
+  <text x="75" y="95" class="prompt-text" filter="url(#glow)">> npx get-github-stats</text>
+
+  <!-- Stat Tile 1: Stars -->
+  <g>
+    <rect x="75" y="115" width="194" height="145" rx="12" class="tile-bg" stroke="#facc15" filter="url(#gold-glow)"/>
+    <circle cx="172" cy="150" r="16" fill="#facc15" fill-opacity="0.15"/>
+    <polygon points="172,141 176,149 185,150 178,156 180,165 172,160 164,165 166,156 159,150 168,149" fill="#facc15"/>
+    <text x="172" y="196" text-anchor="middle" class="metric-value" font-size="28">0</text>
+    <text x="172" y="218" text-anchor="middle" class="metric-label">STARS EARNED</text>
+    <text x="172" y="236" text-anchor="middle" class="metric-subtext">Across repositories</text>
+  </g>
+
+  <!-- Stat Tile 2: Commits -->
+  <g>
+    <rect x="289" y="115" width="194" height="145" rx="12" class="tile-bg" stroke="#38bdf8" filter="url(#cyan-glow)"/>
+    <circle cx="386" cy="150" r="16" fill="#38bdf8" fill-opacity="0.15"/>
+    <circle cx="386" cy="150" r="6" fill="none" stroke="#38bdf8" stroke-width="2.5"/>
+    <line x1="370" y1="150" x2="377" y2="150" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="395" y1="150" x2="402" y2="150" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="386" y="196" text-anchor="middle" class="metric-value" font-size="28" fill="#38bdf8">400</text>
+    <text x="386" y="218" text-anchor="middle" class="metric-label">TOTAL COMMITS</text>
+    <text x="386" y="236" text-anchor="middle" class="metric-subtext">Past 365 days</text>
+  </g>
+
+  <!-- Stat Tile 3: Pull Requests -->
+  <g>
+    <rect x="503" y="115" width="194" height="145" rx="12" class="tile-bg" stroke="#a855f7" filter="url(#purple-glow)"/>
+    <circle cx="600" cy="150" r="16" fill="#a855f7" fill-opacity="0.15"/>
+    <path d="M593 143 L593 157 M607 143 V150 A4 4 0 0 1 603 154 L593 154" fill="none" stroke="#a855f7" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="593" cy="143" r="2" fill="#a855f7"/>
+    <circle cx="593" cy="157" r="2" fill="#a855f7"/>
+    <circle cx="607" cy="143" r="2" fill="#a855f7"/>
+    <text x="600" y="196" text-anchor="middle" class="metric-value" font-size="28" fill="#a855f7">16</text>
+    <text x="600" y="218" text-anchor="middle" class="metric-label">PULL REQUESTS</text>
+    <text x="600" y="236" text-anchor="middle" class="metric-subtext">Merged &amp; opened</text>
+  </g>
+
+  <!-- Stat Tile 4: Issues -->
+  <g>
+    <rect x="717" y="115" width="194" height="145" rx="12" class="tile-bg" stroke="#ef4444" filter="url(#red-glow)"/>
+    <circle cx="814" cy="150" r="16" fill="#ef4444" fill-opacity="0.15"/>
+    <circle cx="814" cy="150" r="8" fill="none" stroke="#ef4444" stroke-width="2"/>
+    <circle cx="814" cy="150" r="2.5" fill="#ef4444"/>
+    <text x="814" y="196" text-anchor="middle" class="metric-value" font-size="28">0</text>
+    <text x="814" y="218" text-anchor="middle" class="metric-label">TOTAL ISSUES</text>
+    <text x="814" y="236" text-anchor="middle" class="metric-subtext">Tracked &amp; reported</text>
+  </g>
+
+  <!-- Stat Tile 5: Contributed Repos -->
+  <g>
+    <rect x="931" y="115" width="194" height="145" rx="12" class="tile-bg" stroke="#34d399" filter="url(#emerald-glow)"/>
+    <circle cx="1028" cy="150" r="16" fill="#34d399" fill-opacity="0.15"/>
+    <path d="M1020 143 H1036 V157 H1020 Z" fill="none" stroke="#34d399" stroke-width="2"/>
+    <path d="M1024 147 H1032 M1024 151 H1030" stroke="#34d399" stroke-width="1.5" stroke-linecap="round"/>
+    <text x="1028" y="196" text-anchor="middle" class="metric-value" font-size="28" fill="#34d399">32</text>
+    <text x="1028" y="218" text-anchor="middle" class="metric-label">CONTRIBUTED TO</text>
+    <text x="1028" y="236" text-anchor="middle" class="metric-subtext">Projects &amp; repos</text>
+  </g>
+
+  <!-- Footer Status -->
+  <text x="75" y="292" class="status-text-green">> status: 100% synchronized with GitHub API</text>
+
+
+</svg>
