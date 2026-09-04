@@ -144,7 +144,7 @@
     </g>
 
     <text x="155" y="152" class="metric-label">CURRENT STREAK</text>
-    <text x="155" y="188" class="metric-value" font-size="32" fill="#f97316">245 <tspan font-size="20" fill="#94a3b8" font-weight="500">Days</tspan></text>
+    <text x="155" y="188" class="metric-value" font-size="32" fill="#f97316">246 <tspan font-size="20" fill="#94a3b8" font-weight="500">Days</tspan></text>
     <text x="155" y="212" class="metric-subtext">Active continuous contribution streak</text>
   </g>
 
@@ -161,7 +161,7 @@
     </g>
 
     <text x="515" y="152" class="metric-label">LONGEST STREAK</text>
-    <text x="515" y="188" class="metric-value" font-size="32" fill="#facc15">245 <tspan font-size="20" fill="#94a3b8" font-weight="500">Days</tspan></text>
+    <text x="515" y="188" class="metric-value" font-size="32" fill="#facc15">246 <tspan font-size="20" fill="#94a3b8" font-weight="500">Days</tspan></text>
     <text x="515" y="212" class="metric-subtext">All-time record streak length</text>
   </g>
 
@@ -176,7 +176,7 @@
     </g>
 
     <text x="875" y="152" class="metric-label">PAST 365 DAYS</text>
-    <text x="875" y="188" class="metric-value" font-size="30" fill="#34d399">790</text>
+    <text x="875" y="188" class="metric-value" font-size="30" fill="#34d399">791</text>
     <text x="875" y="212" class="metric-subtext">Total contributions recorded</text>
   </g>
 
