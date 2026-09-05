@@ -139,12 +139,12 @@
       <rect x="75" y="120" width="1050" height="16" rx="8"/>
     </clipPath>
     <g clip-path="url(#bar-clip)">
-      <rect x="75.00" y="120" width="715.68" height="16" fill="#DA5B0B"/>
-<rect x="790.68" y="120" width="124.66" height="16" fill="#f1e05a"/>
-<rect x="915.34" y="120" width="106.18" height="16" fill="#3178c6"/>
-<rect x="1021.52" y="120" width="54.18" height="16" fill="#3572A5"/>
-<rect x="1075.70" y="120" width="18.20" height="16" fill="#e34c26"/>
-<rect x="1093.90" y="120" width="10.97" height="16" fill="#663399"/>
+      <rect x="75.00" y="120" width="712.53" height="16" fill="#DA5B0B"/>
+<rect x="787.53" y="120" width="128.57" height="16" fill="#f1e05a"/>
+<rect x="916.10" y="120" width="105.71" height="16" fill="#3178c6"/>
+<rect x="1021.81" y="120" width="53.94" height="16" fill="#3572A5"/>
+<rect x="1075.75" y="120" width="18.17" height="16" fill="#e34c26"/>
+<rect x="1093.92" y="120" width="11.01" height="16" fill="#663399"/>
 
     </g>
   </g>
@@ -155,16 +155,16 @@
       <rect x="0" y="0" width="330" height="48" rx="8" class="tile-bg" stroke="#DA5B0B" stroke-opacity="0.6"/>
       <circle cx="20" cy="24" r="6" fill="#DA5B0B"/>
       <text x="35" y="29" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#f0f6fc">Jupyter Notebook</text>
-      <text x="315" y="29" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#DA5B0B">68.2%</text>
-      <line x1="35" y1="36" x2="225.8" y2="36" stroke="#DA5B0B" stroke-width="2" stroke-linecap="round"/>
+      <text x="315" y="29" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#DA5B0B">67.9%</text>
+      <line x1="35" y1="36" x2="225.0" y2="36" stroke="#DA5B0B" stroke-width="2" stroke-linecap="round"/>
     </g>
     
     <g transform="translate(435, 155)">
       <rect x="0" y="0" width="330" height="48" rx="8" class="tile-bg" stroke="#f1e05a" stroke-opacity="0.6"/>
       <circle cx="20" cy="24" r="6" fill="#f1e05a"/>
       <text x="35" y="29" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#f0f6fc">JavaScript</text>
-      <text x="315" y="29" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#f1e05a">11.9%</text>
-      <line x1="35" y1="36" x2="68.2" y2="36" stroke="#f1e05a" stroke-width="2" stroke-linecap="round"/>
+      <text x="315" y="29" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#f1e05a">12.2%</text>
+      <line x1="35" y1="36" x2="69.3" y2="36" stroke="#f1e05a" stroke-width="2" stroke-linecap="round"/>
     </g>
     
     <g transform="translate(795, 155)">
@@ -172,14 +172,14 @@
       <circle cx="20" cy="24" r="6" fill="#3178c6"/>
       <text x="35" y="29" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#f0f6fc">TypeScript</text>
       <text x="315" y="29" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#3178c6">10.1%</text>
-      <line x1="35" y1="36" x2="63.3" y2="36" stroke="#3178c6" stroke-width="2" stroke-linecap="round"/>
+      <line x1="35" y1="36" x2="63.2" y2="36" stroke="#3178c6" stroke-width="2" stroke-linecap="round"/>
     </g>
     
     <g transform="translate(75, 213)">
       <rect x="0" y="0" width="330" height="48" rx="8" class="tile-bg" stroke="#3572A5" stroke-opacity="0.6"/>
       <circle cx="20" cy="24" r="6" fill="#3572A5"/>
       <text x="35" y="29" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#f0f6fc">Python</text>
-      <text x="315" y="29" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#3572A5">5.2%</text>
+      <text x="315" y="29" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#3572A5">5.1%</text>
       <line x1="35" y1="36" x2="49.4" y2="36" stroke="#3572A5" stroke-width="2" stroke-linecap="round"/>
     </g>
     
@@ -188,7 +188,7 @@
       <circle cx="20" cy="24" r="6" fill="#e34c26"/>
       <text x="35" y="29" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#f0f6fc">HTML</text>
       <text x="315" y="29" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#e34c26">1.7%</text>
-      <line x1="35" y1="36" x2="39.9" y2="36" stroke="#e34c26" stroke-width="2" stroke-linecap="round"/>
+      <line x1="35" y1="36" x2="39.8" y2="36" stroke="#e34c26" stroke-width="2" stroke-linecap="round"/>
     </g>
     
     <g transform="translate(795, 213)">
