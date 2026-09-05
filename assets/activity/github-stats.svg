@@ -149,7 +149,7 @@
     <circle cx="386" cy="150" r="6" fill="none" stroke="#38bdf8" stroke-width="2.5"/>
     <line x1="370" y1="150" x2="377" y2="150" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round"/>
     <line x1="395" y1="150" x2="402" y2="150" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round"/>
-    <text x="386" y="196" text-anchor="middle" class="metric-value" font-size="28" fill="#38bdf8">417</text>
+    <text x="386" y="196" text-anchor="middle" class="metric-value" font-size="28" fill="#38bdf8">418</text>
     <text x="386" y="218" text-anchor="middle" class="metric-label">TOTAL COMMITS</text>
     <text x="386" y="236" text-anchor="middle" class="metric-subtext">Past 365 days</text>
   </g>
