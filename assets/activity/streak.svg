@@ -176,7 +176,7 @@
     </g>
 
     <text x="875" y="152" class="metric-label">PAST 365 DAYS</text>
-    <text x="875" y="188" class="metric-value" font-size="30" fill="#34d399">804</text>
+    <text x="875" y="188" class="metric-value" font-size="30" fill="#34d399">805</text>
     <text x="875" y="212" class="metric-subtext">Total contributions recorded</text>
   </g>
 
