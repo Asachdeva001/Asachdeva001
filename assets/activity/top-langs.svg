@@ -139,12 +139,12 @@
       <rect x="75" y="120" width="1050" height="16" rx="8"/>
     </clipPath>
     <g clip-path="url(#bar-clip)">
-      <rect x="75.00" y="120" width="712.01" height="16" fill="#DA5B0B"/>
-<rect x="787.01" y="120" width="128.47" height="16" fill="#f1e05a"/>
-<rect x="915.49" y="120" width="105.64" height="16" fill="#3178c6"/>
-<rect x="1021.13" y="120" width="54.67" height="16" fill="#3572A5"/>
-<rect x="1075.79" y="120" width="18.15" height="16" fill="#e34c26"/>
-<rect x="1093.94" y="120" width="11.00" height="16" fill="#663399"/>
+      <rect x="75.00" y="120" width="712.05" height="16" fill="#DA5B0B"/>
+<rect x="787.05" y="120" width="128.48" height="16" fill="#f1e05a"/>
+<rect x="915.53" y="120" width="105.64" height="16" fill="#3178c6"/>
+<rect x="1021.17" y="120" width="54.62" height="16" fill="#3572A5"/>
+<rect x="1075.79" y="120" width="18.16" height="16" fill="#e34c26"/>
+<rect x="1093.94" y="120" width="11.01" height="16" fill="#663399"/>
 
     </g>
   </g>
