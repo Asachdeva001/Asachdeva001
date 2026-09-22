@@ -139,11 +139,11 @@
       <rect x="75" y="120" width="1050" height="16" rx="8"/>
     </clipPath>
     <g clip-path="url(#bar-clip)">
-      <rect x="75.00" y="120" width="689.34" height="16" fill="#DA5B0B"/>
-<rect x="764.34" y="120" width="133.07" height="16" fill="#f1e05a"/>
-<rect x="897.41" y="120" width="119.99" height="16" fill="#3178c6"/>
-<rect x="1017.40" y="120" width="58.93" height="16" fill="#3572A5"/>
-<rect x="1076.33" y="120" width="17.77" height="16" fill="#e34c26"/>
+      <rect x="75.00" y="120" width="689.17" height="16" fill="#DA5B0B"/>
+<rect x="764.17" y="120" width="133.29" height="16" fill="#f1e05a"/>
+<rect x="897.46" y="120" width="119.96" height="16" fill="#3178c6"/>
+<rect x="1017.42" y="120" width="58.92" height="16" fill="#3572A5"/>
+<rect x="1076.34" y="120" width="17.76" height="16" fill="#e34c26"/>
 <rect x="1094.10" y="120" width="11.19" height="16" fill="#663399"/>
 
     </g>
@@ -155,7 +155,7 @@
       <rect x="0" y="0" width="330" height="48" rx="8" class="tile-bg" stroke="#DA5B0B" stroke-opacity="0.6"/>
       <circle cx="20" cy="24" r="6" fill="#DA5B0B"/>
       <text x="35" y="29" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#f0f6fc">Jupyter Notebook</text>
-      <text x="315" y="29" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#DA5B0B">65.7%</text>
+      <text x="315" y="29" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#DA5B0B">65.6%</text>
       <line x1="35" y1="36" x2="218.8" y2="36" stroke="#DA5B0B" stroke-width="2" stroke-linecap="round"/>
     </g>
     
