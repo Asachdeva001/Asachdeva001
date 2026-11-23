@@ -139,12 +139,12 @@
       <rect x="75" y="120" width="1050" height="16" rx="8"/>
     </clipPath>
     <g clip-path="url(#bar-clip)">
-      <rect x="75.00" y="120" width="664.58" height="16" fill="#DA5B0B"/>
-<rect x="739.58" y="120" width="145.52" height="16" fill="#f1e05a"/>
-<rect x="885.10" y="120" width="131.85" height="16" fill="#3178c6"/>
-<rect x="1016.95" y="120" width="57.30" height="16" fill="#3572A5"/>
-<rect x="1074.25" y="120" width="17.29" height="16" fill="#e34c26"/>
-<rect x="1091.54" y="120" width="13.38" height="16" fill="#663399"/>
+      <rect x="75.00" y="120" width="664.38" height="16" fill="#DA5B0B"/>
+<rect x="739.38" y="120" width="145.79" height="16" fill="#f1e05a"/>
+<rect x="885.17" y="120" width="131.81" height="16" fill="#3178c6"/>
+<rect x="1016.99" y="120" width="57.28" height="16" fill="#3572A5"/>
+<rect x="1074.27" y="120" width="17.28" height="16" fill="#e34c26"/>
+<rect x="1091.55" y="120" width="13.37" height="16" fill="#663399"/>
 
     </g>
   </g>
@@ -164,7 +164,7 @@
       <circle cx="20" cy="24" r="6" fill="#f1e05a"/>
       <text x="35" y="29" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#f0f6fc">JavaScript</text>
       <text x="315" y="29" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#f1e05a">13.9%</text>
-      <line x1="35" y1="36" x2="73.8" y2="36" stroke="#f1e05a" stroke-width="2" stroke-linecap="round"/>
+      <line x1="35" y1="36" x2="73.9" y2="36" stroke="#f1e05a" stroke-width="2" stroke-linecap="round"/>
     </g>
     
     <g transform="translate(795, 155)">
